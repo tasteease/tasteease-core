@@ -52,8 +52,11 @@ public class OrderRepository
             .Include(i => i.Client)
             .Include(i => i.Foods)
             .ThenInclude(i => i.Food)
-            .Where(w => w.Status != OrderStatus.Finished)
-            .OrderBy(x => x.Status == OrderStatus.Prepared)
+            .Where(w => w.Status != OrderStatus.Finished
+                   && ( w.Status == OrderStatus.Prepared
+                   || w.Status == OrderStatus.Preparing
+                   || w.Status == OrderStatus.Delivered))
+            .OrderBy(x =>  x.Status == OrderStatus.Prepared)
             .ThenBy(x => x.Status == OrderStatus.Preparing)
             .ThenBy(x => x.Status == OrderStatus.Delivered);
 
