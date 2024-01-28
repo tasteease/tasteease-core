@@ -15,7 +15,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\tests\Fiap.TasteEase.Domain.Tests\Fiap.TasteEase.Domain.Tests.csproj" />
     <ProjectReference Include="..\..\core\Fiap.TasteEase.Application\Fiap.TasteEase.Application.csproj" />
     <ProjectReference Include="..\..\core\Fiap.TasteEase.Domain\Fiap.TasteEase.Domain.csproj" />
     <ProjectReference Include="..\..\presentation\Fiap.TasteEase.Api\Fiap.TasteEase.Api.csproj" />
