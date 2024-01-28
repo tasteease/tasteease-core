@@ -1,4 +1,4 @@
-﻿using Fiap.TasteEase.Application.UseCases.FoodUseCase;
+﻿using Fiap.TasteEase.Application.UseCases.FoodUseCase.Queries.GetById;
 using Mapster;
 
 namespace Fiap.TasteEase.Application.Mappers.Food

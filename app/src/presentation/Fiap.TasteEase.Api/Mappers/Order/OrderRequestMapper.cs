@@ -1,5 +1,5 @@
 ﻿using Fiap.TasteEase.Api.ViewModels.Order;
-using Fiap.TasteEase.Application.UseCases.OrderUseCase;
+using Fiap.TasteEase.Application.UseCases.OrderUseCase.Create;
 using Mapster;
 
 namespace Fiap.TasteEase.Api.Mappers
@@ -8,7 +8,7 @@ namespace Fiap.TasteEase.Api.Mappers
     {
         public void Register(TypeAdapterConfig config)
         {
-            config.ForType<OrderRequest, Create>()
+            config.ForType<OrderRequest, CreateOrderCommand>()
                 .Map(model => model.Description, src => src.Description)
                 .Map(model => model.ClientId, src => src.ClientId)
                 .Map(model => model.Foods, src => src.Foods, t => t.Foods != null);

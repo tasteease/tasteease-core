@@ -1,6 +1,11 @@
 ﻿using Fiap.TasteEase.Api.ViewModels;
 using Fiap.TasteEase.Api.ViewModels.Food;
 using Fiap.TasteEase.Application.UseCases.FoodUseCase;
+using Fiap.TasteEase.Application.UseCases.FoodUseCase.Create;
+using Fiap.TasteEase.Application.UseCases.FoodUseCase.Delete;
+using Fiap.TasteEase.Application.UseCases.FoodUseCase.Queries.GetAll;
+using Fiap.TasteEase.Application.UseCases.FoodUseCase.Queries.GetById;
+using Fiap.TasteEase.Application.UseCases.FoodUseCase.Update;
 using Fiap.TasteEase.Domain.Aggregates.FoodAggregate;
 using Mapster;
 using MediatR;
@@ -31,7 +36,7 @@ namespace Fiap.TasteEase.Api.Controllers
         {
             try
             {
-                var response = await _mediator.Send(new GetAll());
+                var response = await _mediator.Send(new GetFoodAllQuery());
 
                 if (response.IsFailed)
                 {
@@ -70,7 +75,7 @@ namespace Fiap.TasteEase.Api.Controllers
         {
             try
             {
-                var response = await _mediator.Send(new GetById()
+                var response = await _mediator.Send(new GetFoodByIdQuery()
                 {
                     Id = id
                 });
@@ -112,7 +117,7 @@ namespace Fiap.TasteEase.Api.Controllers
         {
             try
             {
-                var command = request.Adapt<Create>();
+                var command = request.Adapt<CreateFoodCommand>();
 
                 var response = await _mediator.Send(command);
 
@@ -153,7 +158,7 @@ namespace Fiap.TasteEase.Api.Controllers
         {
             try
             {
-                var command = request.Adapt<Update>();
+                var command = request.Adapt<UpdateFoodCommand>();
 
                 var response = await _mediator.Send(command);
 
@@ -194,7 +199,7 @@ namespace Fiap.TasteEase.Api.Controllers
         {
             try
             {
-                var command = request.Adapt<Delete>();
+                var command = request.Adapt<DeleteFoodCommand>();
 
                 var response = await _mediator.Send(command);
 

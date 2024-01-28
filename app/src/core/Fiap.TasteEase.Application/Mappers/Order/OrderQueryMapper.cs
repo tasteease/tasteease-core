@@ -1,5 +1,4 @@
-﻿using Fiap.TasteEase.Application.UseCases.OrderUseCase;
-using Fiap.TasteEase.Domain.Aggregates.OrderAggregate;
+﻿using Fiap.TasteEase.Application.UseCases.OrderUseCase.Queries.GetById;
 using Fiap.TasteEase.Domain.Aggregates.OrderAggregate.ValueObjects;
 using Mapster;
 

@@ -1,4 +1,4 @@
-﻿using Fiap.TasteEase.Application.UseCases.OrderUseCase;
+﻿using Fiap.TasteEase.Application.UseCases.OrderUseCase.Create;
 using Fiap.TasteEase.Domain.Aggregates.OrderAggregate;
 using Fiap.TasteEase.Domain.Aggregates.OrderAggregate.ValueObjects;
 using Mapster;
@@ -9,7 +9,7 @@ namespace Fiap.TasteEase.Application.Mappers.Order
     {
         public void Register(TypeAdapterConfig config)
         {
-            config.ForType<Create, CreateOrderProps>()
+            config.ForType<CreateOrderCommand, CreateOrderProps>()
                 .Map(model => model.Description, src => src.Description)
                 .Map(model => model.ClientId, src => src.ClientId);
             

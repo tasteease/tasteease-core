@@ -1,6 +1,12 @@
 using Fiap.TasteEase.Api.ViewModels;
 using Fiap.TasteEase.Api.ViewModels.Order;
 using Fiap.TasteEase.Application.UseCases.OrderUseCase;
+using Fiap.TasteEase.Application.UseCases.OrderUseCase.Checkout;
+using Fiap.TasteEase.Application.UseCases.OrderUseCase.Checkout.Process;
+using Fiap.TasteEase.Application.UseCases.OrderUseCase.Create;
+using Fiap.TasteEase.Application.UseCases.OrderUseCase.Queries;
+using Fiap.TasteEase.Application.UseCases.OrderUseCase.Queries.GetById;
+using Fiap.TasteEase.Application.UseCases.OrderUseCase.Update;
 using Fiap.TasteEase.Domain.Aggregates.OrderAggregate.ValueObjects;
 using Mapster;
 using MediatR;
@@ -31,7 +37,7 @@ namespace Fiap.TasteEase.Api.Controllers
         {
             try
             {
-                var command = request.Adapt<Create>();
+                var command = request.Adapt<CreateOrderCommand>();
                 var response = await _mediator.Send(command);
 
                 if (response.IsFailed)
@@ -71,7 +77,7 @@ namespace Fiap.TasteEase.Api.Controllers
         {
             try
             {
-                var response = await _mediator.Send(new GetAll { ClientId = clientId, Status = status});
+                var response = await _mediator.Send(new GetOrderAllQuery() { ClientId = clientId, Status = status});
 
                 if (response.IsFailed)
                 {
@@ -111,7 +117,7 @@ namespace Fiap.TasteEase.Api.Controllers
         {
             try
             {
-                var response = await _mediator.Send(new GetById { OrderId = orderId });
+                var response = await _mediator.Send(new GetOrderByIdQuery() { OrderId = orderId });
 
                 if (response.IsFailed)
                 {
@@ -150,7 +156,7 @@ namespace Fiap.TasteEase.Api.Controllers
         {
             try
             {
-                var response = await _mediator.Send(new UpdateStatus { OrderId = orderId, Status = request.Status});
+                var response = await _mediator.Send(new UpdateOrderCommand { OrderId = orderId, Status = request.Status});
 
                 if (response.IsFailed)
                 {
@@ -189,7 +195,7 @@ namespace Fiap.TasteEase.Api.Controllers
         {
             try
             {
-                var response = await _mediator.Send(new Pay { OrderId = orderId });
+                var response = await _mediator.Send(new PayCommand { OrderId = orderId });
 
                 if (response.IsFailed)
                 {
@@ -228,7 +234,7 @@ namespace Fiap.TasteEase.Api.Controllers
         {
             try
             {
-                var pay = request.Adapt<ProcessPayment>();
+                var pay = request.Adapt<ProcessPaymentCommand>();
                 var response = await _mediator.Send(pay);
 
                 if (response.IsFailed)

@@ -1,5 +1,7 @@
 ﻿using Fiap.TasteEase.Api.ViewModels.Food;
-using Fiap.TasteEase.Application.UseCases.FoodUseCase;
+using Fiap.TasteEase.Application.UseCases.FoodUseCase.Create;
+using Fiap.TasteEase.Application.UseCases.FoodUseCase.Delete;
+using Fiap.TasteEase.Application.UseCases.FoodUseCase.Update;
 using Mapster;
 
 namespace Fiap.TasteEase.Api.Mappers.Food
@@ -8,7 +10,7 @@ namespace Fiap.TasteEase.Api.Mappers.Food
     {
         public void Register(TypeAdapterConfig config)
         {
-            config.ForType<CreateFoodRequest, Create>()
+            config.ForType<CreateFoodRequest, CreateFoodCommand>()
                 .Map(model => model.Name, src => src.Name)
                 .Map(model => model.Description, src => src.Description)
                 .Map(model => model.Price, src => src.Price)
@@ -20,7 +22,7 @@ namespace Fiap.TasteEase.Api.Mappers.Food
     {
         public void Register(TypeAdapterConfig config)
         {
-            config.ForType<UpdateFoodRequest, Update>()
+            config.ForType<UpdateFoodRequest, UpdateFoodCommand>()
                 .Map(model => model.Id, src => src.Id)
                 .Map(model => model.Name, src => src.Name)
                 .Map(model => model.Description, src => src.Description)
@@ -33,7 +35,7 @@ namespace Fiap.TasteEase.Api.Mappers.Food
     {
         public void Register(TypeAdapterConfig config)
         {
-            config.ForType<DeleteFoodRequest, Delete>()
+            config.ForType<DeleteFoodRequest, DeleteFoodCommand>()
                 .Map(model => model.Id, src => src.Id);
         }
     }
