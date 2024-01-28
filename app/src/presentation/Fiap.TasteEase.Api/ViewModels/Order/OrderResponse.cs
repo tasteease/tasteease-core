@@ -23,3 +23,13 @@ public record OrderFoodResponse(
     int Quantity,
     DateTime CreatedAt
 );
+
+public record OrderWithDescriptionResponse(
+    Guid Id,
+    string Description,
+    OrderStatus Status,
+    string ClientName,
+    decimal TotalPrice,
+    DateTime CreatedAt,
+    DateTime UpdatedAt
+);
