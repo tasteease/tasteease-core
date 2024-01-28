@@ -4,7 +4,9 @@ using Fiap.TasteEase.Application.UseCases.FoodUseCase;
 using Fiap.TasteEase.Domain.Aggregates.FoodAggregate;
 using Mapster;
 using MediatR;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 
 namespace Fiap.TasteEase.Api.Controllers
 {

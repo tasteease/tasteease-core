@@ -4,6 +4,8 @@ using Microsoft.AspNetCore.Mvc;
 using Fiap.TasteEase.Api.ViewModels.Client;
 using Fiap.TasteEase.Application.UseCases.ClientUseCase;
 using Mapster;
+using Microsoft.Extensions.Logging;
+using Microsoft.AspNetCore.Http;
 
 namespace Fiap.TasteEase.Api.Controllers
 {

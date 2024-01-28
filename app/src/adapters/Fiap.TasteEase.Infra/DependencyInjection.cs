@@ -16,8 +16,7 @@ namespace Fiap.TasteEase.Infra
             {
                 Console.WriteLine($"Using {configuration.GetConnectionString("DefaultConnection")} connection string");
                 options
-                    .UseNpgsql(
-                        configuration.GetConnectionString("DefaultConnection"),
+                    .UseNpgsql(configuration.GetConnectionString("DefaultConnection"),
                         builder => builder.UseQuerySplittingBehavior(QuerySplittingBehavior.SingleQuery)
                     );
             });

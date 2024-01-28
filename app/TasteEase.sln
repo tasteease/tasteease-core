@@ -5,7 +5,7 @@ VisualStudioVersion = 17.7.34003.232
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{F5D343D7-5AA4-42A2-9E2D-0772D91B35DB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fiap.TasteEase.Domain.Tests", "tests\Fiap.TasteEase.Domain.Tests\Fiap.TasteEase.Domain.Tests.csproj", "{C60DD8FB-6CDA-4C2D-BA83-A6CE67977C13}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fiap.TasteEase.Domain.Tests", "tests\Fiap.TasteEase.Domain.Tests\Fiap.TasteEase.Domain.Tests.csproj", "{C60DD8FB-6CDA-4C2D-BA83-A6CE67977C13}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{27C76047-E78C-4B8B-B036-CE80A4A841F7}"
 EndProject
@@ -15,15 +15,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "core", "core", "{D878E35B-6
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "presentation", "presentation", "{25DB12B3-C13D-4E77-92F9-855A496688EF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fiap.TasteEase.Infra", "src\adapters\Fiap.TasteEase.Infra\Fiap.TasteEase.Infra.csproj", "{06E53340-D5DC-49DD-9031-7355A4041E8B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fiap.TasteEase.Infra", "src\adapters\Fiap.TasteEase.Infra\Fiap.TasteEase.Infra.csproj", "{06E53340-D5DC-49DD-9031-7355A4041E8B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fiap.TasteEase.Application", "src\core\Fiap.TasteEase.Application\Fiap.TasteEase.Application.csproj", "{9309978B-A21D-47CB-8C18-8AA223F94A1C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fiap.TasteEase.Application", "src\core\Fiap.TasteEase.Application\Fiap.TasteEase.Application.csproj", "{9309978B-A21D-47CB-8C18-8AA223F94A1C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fiap.TasteEase.Domain", "src\core\Fiap.TasteEase.Domain\Fiap.TasteEase.Domain.csproj", "{F8F223EB-3B18-4B49-A91E-F65610145C9F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fiap.TasteEase.Domain", "src\core\Fiap.TasteEase.Domain\Fiap.TasteEase.Domain.csproj", "{F8F223EB-3B18-4B49-A91E-F65610145C9F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fiap.TasteEase.Api", "src\presentation\Fiap.TasteEase.Api\Fiap.TasteEase.Api.csproj", "{85EF762E-28C1-4E10-9A5F-CCB6E2101ECA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fiap.TasteEase.Webhost", "src\adapters\Fiap.TasteEase.Webhost\Fiap.TasteEase.Webhost.csproj", "{9B7F8F03-D499-4690-9753-90DC9AC09B67}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fiap.TasteEase.Webhost", "src\adapters\Fiap.TasteEase.Webhost\Fiap.TasteEase.Webhost.csproj", "{588FFFB9-1C7C-4E88-ADFE-77C79C67BB14}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fiap.TasteEase.Api", "src\presentation\Fiap.TasteEase.Api\Fiap.TasteEase.Api.csproj", "{52AFAEB6-D31A-45CB-9AA6-F798A422DABB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -47,14 +47,14 @@ Global
 		{F8F223EB-3B18-4B49-A91E-F65610145C9F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F8F223EB-3B18-4B49-A91E-F65610145C9F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F8F223EB-3B18-4B49-A91E-F65610145C9F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{85EF762E-28C1-4E10-9A5F-CCB6E2101ECA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{85EF762E-28C1-4E10-9A5F-CCB6E2101ECA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{85EF762E-28C1-4E10-9A5F-CCB6E2101ECA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{85EF762E-28C1-4E10-9A5F-CCB6E2101ECA}.Release|Any CPU.Build.0 = Release|Any CPU
-		{588FFFB9-1C7C-4E88-ADFE-77C79C67BB14}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{588FFFB9-1C7C-4E88-ADFE-77C79C67BB14}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{588FFFB9-1C7C-4E88-ADFE-77C79C67BB14}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{588FFFB9-1C7C-4E88-ADFE-77C79C67BB14}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B7F8F03-D499-4690-9753-90DC9AC09B67}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B7F8F03-D499-4690-9753-90DC9AC09B67}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B7F8F03-D499-4690-9753-90DC9AC09B67}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B7F8F03-D499-4690-9753-90DC9AC09B67}.Release|Any CPU.Build.0 = Release|Any CPU
+		{52AFAEB6-D31A-45CB-9AA6-F798A422DABB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52AFAEB6-D31A-45CB-9AA6-F798A422DABB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52AFAEB6-D31A-45CB-9AA6-F798A422DABB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52AFAEB6-D31A-45CB-9AA6-F798A422DABB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -67,8 +67,8 @@ Global
 		{06E53340-D5DC-49DD-9031-7355A4041E8B} = {56BB3436-7CD0-4066-9427-7FDF5568953C}
 		{9309978B-A21D-47CB-8C18-8AA223F94A1C} = {D878E35B-6522-4F28-A8D5-35232C615DB7}
 		{F8F223EB-3B18-4B49-A91E-F65610145C9F} = {D878E35B-6522-4F28-A8D5-35232C615DB7}
-		{85EF762E-28C1-4E10-9A5F-CCB6E2101ECA} = {25DB12B3-C13D-4E77-92F9-855A496688EF}
-		{588FFFB9-1C7C-4E88-ADFE-77C79C67BB14} = {56BB3436-7CD0-4066-9427-7FDF5568953C}
+		{9B7F8F03-D499-4690-9753-90DC9AC09B67} = {56BB3436-7CD0-4066-9427-7FDF5568953C}
+		{52AFAEB6-D31A-45CB-9AA6-F798A422DABB} = {25DB12B3-C13D-4E77-92F9-855A496688EF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7D7BD128-797A-4BAF-837D-B4A7AF460DE9}

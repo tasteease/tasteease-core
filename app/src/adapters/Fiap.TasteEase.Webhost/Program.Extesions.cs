@@ -1,6 +1,7 @@
-﻿using System.Reflection;
+﻿using System;
+using System.Reflection;
 using Mapster;
-using Microsoft.Extensions.DependencyInjection;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace Fiap.TasteEase.Api;
 
@@ -21,6 +22,6 @@ public static class Program
 
         services.AddSingleton(config);
 
-       return services;
+        return services;
     }
 }
