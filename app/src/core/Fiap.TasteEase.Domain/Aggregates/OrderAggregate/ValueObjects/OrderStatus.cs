@@ -7,5 +7,6 @@ public enum OrderStatus
     Paid,
     Preparing,
     Prepared,
-    Delivered
+    Delivered,
+    Finished
 }

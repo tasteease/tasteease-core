@@ -15,7 +15,6 @@ public static class DependencyInjection
     {
         services.AddDbContext<ApplicationDbContext>(options =>
         {
-            Console.WriteLine($"Using {configuration.GetConnectionString("DefaultConnection")} connection string");
             options
                 .UseNpgsql(configuration.GetConnectionString("DefaultConnection"),
                     builder => builder.UseQuerySplittingBehavior(QuerySplittingBehavior.SingleQuery)

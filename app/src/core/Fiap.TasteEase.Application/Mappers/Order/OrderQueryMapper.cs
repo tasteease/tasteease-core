@@ -1,4 +1,5 @@
 ﻿using Fiap.TasteEase.Application.UseCases.OrderUseCase.Queries.GetById;
+using Fiap.TasteEase.Application.UseCases.OrderUseCase.Queries.GetWithDescription;
 using Fiap.TasteEase.Domain.Aggregates.OrderAggregate.ValueObjects;
 using Mapster;
 
@@ -24,5 +25,14 @@ internal class OrderQueryMapper : IRegister
             .Map(model => model.FoodPrice, src => src.Food.Price)
             .Map(model => model.Quantity, src => src.Quantity)
             .Map(model => model.CreatedAt, src => src.CreatedAt);
+
+        config.ForType<Domain.Aggregates.OrderAggregate.Order, OrderWithDescriptionQuery>()
+            .Map(model => model.Id, src => src.Id.Value)
+            .Map(model => model.Description, src => src.Description)
+            .Map(model => model.ClientName, src => src.Client.Name)
+            .Map(model => model.TotalPrice, src => src.GetTotalPrice())
+            .Map(model => model.CreatedAt, src => src.CreatedAt)
+            .Map(model => model.UpdatedAt, src => src.UpdatedAt);
+        
     }
 }

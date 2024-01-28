@@ -137,6 +137,11 @@ public class Order : Entity<OrderId, OrderProps>, IOrderAggregate
         return Result.Ok(total);
     }
 
+    public decimal GetTotalPrice()
+    {
+        return Foods.Sum(s => s.Quantity * (s.Food.Price));
+    }
+
     public Result<Order> UpdateStatus(OrderStatus newStatus)
     {
         Props = Props with

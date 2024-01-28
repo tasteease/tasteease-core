@@ -46,6 +46,26 @@ public class OrderRepository
         return Result.Ok(aggregates);
     }
 
+    public async Task<Result<IEnumerable<Order>>> GetWithDescription()
+    {
+        var query = DbSet.AsNoTracking()
+            .Include(i => i.Client)
+            .Include(i => i.Foods)
+            .ThenInclude(i => i.Food)
+            .Where(w => w.Status != OrderStatus.Finished
+                   && ( w.Status == OrderStatus.Prepared
+                   || w.Status == OrderStatus.Preparing
+                   || w.Status == OrderStatus.Delivered))
+            .OrderBy(x =>  x.Status == OrderStatus.Prepared)
+            .ThenBy(x => x.Status == OrderStatus.Preparing)
+            .ThenBy(x => x.Status == OrderStatus.Delivered);
+
+        var models = await query.OrderByDescending(o => o.CreatedAt).ToListAsync();
+        var aggregates = models.Select(model =>
+            Order.Rehydrate(model).ValueOrDefault);
+        return Result.Ok(aggregates);
+    }
+
     public override async Task<Result<Order>> GetById(Guid id)
     {
         var query = await DbSet.AsNoTracking()

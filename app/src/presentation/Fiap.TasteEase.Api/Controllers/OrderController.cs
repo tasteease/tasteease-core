@@ -5,6 +5,7 @@ using Fiap.TasteEase.Application.UseCases.OrderUseCase.Checkout.Process;
 using Fiap.TasteEase.Application.UseCases.OrderUseCase.Create;
 using Fiap.TasteEase.Application.UseCases.OrderUseCase.Queries;
 using Fiap.TasteEase.Application.UseCases.OrderUseCase.Queries.GetById;
+using Fiap.TasteEase.Application.UseCases.OrderUseCase.Queries.GetWithDescription;
 using Fiap.TasteEase.Application.UseCases.OrderUseCase.Update;
 using Fiap.TasteEase.Domain.Aggregates.OrderAggregate.ValueObjects;
 using Mapster;
@@ -107,6 +108,43 @@ public class OrderController : ControllerBase
         }
     }
 
+
+    [HttpGet("/[controller]/GetWithDescription")]
+    public async Task<ActionResult<ResponseViewModel<IEnumerable<OrderWithDescriptionResponse>>>> GetWithDescription()
+    {
+        try
+        {
+            var response = await _mediator.Send(new GetOrderWithDescriptionQuery());
+
+            if (response.IsFailed)
+                return StatusCode(StatusCodes.Status400BadRequest,
+                    new ResponseViewModel<IEnumerable<OrderWithDescriptionResponse>>
+                    {
+                        Error = true,
+                        ErrorMessages = response.Errors.Select(x => x.Message),
+                        Data = null!
+                    }
+                );
+
+            return StatusCode(StatusCodes.Status200OK,
+                new ResponseViewModel<IEnumerable<OrderWithDescriptionResponse>>
+                {
+                    Data = response.ValueOrDefault.Adapt<IEnumerable<OrderWithDescriptionResponse>>()
+                }
+            );
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(StatusCodes.Status500InternalServerError,
+                new ResponseViewModel<IEnumerable<OrderWithDescriptionResponse>>
+                {
+                    Error = true,
+                    ErrorMessages = new List<string> { ex.Message },
+                    Data = null!
+                }
+            );
+        }
+    }
 
     [HttpGet("/[controller]/{orderId}")]
     public async Task<ActionResult<ResponseViewModel<OrderResponse>>> GetById([FromRoute] Guid orderId)

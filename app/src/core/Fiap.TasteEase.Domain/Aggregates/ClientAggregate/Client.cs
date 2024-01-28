@@ -12,7 +12,7 @@ namespace Fiap.TasteEase.Domain.Aggregates.ClientAggregate
         }
 
         public string Name => Props.Name;
-        public string TaxpayerNumber => Props.Name;
+        public string TaxpayerNumber => Props.TaxpayerNumber;
         public DateTime CreatedAt => Props.CreatedAt;
         public DateTime UpdatedAt => Props.UpdatedAt;
 
