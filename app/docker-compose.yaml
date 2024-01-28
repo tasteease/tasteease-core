@@ -1,0 +1,46 @@
+version: "3.5"
+
+services:
+  postgres:
+    image: postgres
+    container_name: tasteease-postgresql
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      PGDATA: /data/postgres
+    volumes:
+      - postgres:/data/postgres
+    ports:
+      - "5432:5432"
+    restart: unless-stopped
+
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: teastease-pgadmin
+    environment:
+      PGADMIN_DEFAULT_EMAIL: taste@tasteease.com
+      PGADMIN_DEFAULT_PASSWORD: "@123456"
+      PGADMIN_CONFIG_SERVER_MODE: "False"
+    volumes:
+      - pgadmin:/var/lib/pgadmin
+    ports:
+      - 82:80
+    depends_on:
+      - postgres
+    restart: unless-stopped
+
+  testease:
+    image: tasteease/tasteease
+    container_name: tasteease
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+    ports:
+      - 5212:80
+    depends_on:
+      - postgres
+
+volumes:
+  postgres:
+    driver: local
+  pgadmin:
+  teastease:

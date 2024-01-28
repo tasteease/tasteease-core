@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tasteease-db-deployment
+  namespace: tasteease
+  labels:
+    app: tasteease-db-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: tasteease-database-pod
+  template:
+    metadata:
+      labels:
+        app: tasteease-database-pod
+    spec:
+      containers:
+        - name: tasteease-postgresql
+          image: postgres:latest
+          ports:
+            - containerPort: 5432
+          env:
+            - name: POSTGRES_USER
+              value: "tasteease"
+            - name: POSTGRES_PASSWORD
+              value: "tasteease"
+          resources:
+            limits:
+              cpu: "100m"
+              memory: "256Mi"
+          volumeMounts:
+            - mountPath: /var/lib/postgresql/data
+              name: tasteease-postgres-pv-claim
+      volumes:
+        - name: tasteease-postgres-pv-claim
+          persistentVolumeClaim:
+            claimName: tasteease-postgres-pv-claim

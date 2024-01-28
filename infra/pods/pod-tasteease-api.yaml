@@ -1,0 +1,33 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: tasteease-api-pod
+  namespace: tasteease
+  labels:
+    app: tasteease-api-pod
+spec:
+  containers:
+    - name: tasteease-api
+      image: estrng/tasteease:0.0.16
+      ports:
+        - containerPort: 80
+      env:
+        - name: ASPNETCORE_ENVIRONMENT
+          value: "Development"
+        - name: SECRETS_PATH
+          value: /app/secrets/
+      resources:
+        limits:
+          cpu: "1"
+          memory: "256Mi"
+        requests:
+          cpu: "0.5"
+          memory: "256Mi"
+      volumeMounts:
+        - name: secrets
+          mountPath: /app/secrets/appsettings.json
+          subPath: appsettings.json
+  volumes:
+    - name: secrets
+      configMap:
+        name: appsettings-taste-ease

@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: appsettings-taste-ease
+  namespace: tasteease
+  labels:
+    app: appsettings-taste-ease
+data:
+  appsettings.json: |-
+    {
+      "Logging": {
+        "LogLevel": {
+          "Default": "Information",
+          "Microsoft.AspNetCore": "Warning"
+        }
+      },
+      "AllowedHosts": "*",
+      "ConnectionStrings": {
+        "DefaultConnection": "Host=tasteease-database-service.tasteease.svc.cluster.local;Port=80;Database=taste-ease;Username=tasteease;Password=tasteease"
+      }
+    }
