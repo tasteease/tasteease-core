@@ -19,7 +19,7 @@ public class GetOrderByIdHandler : IRequestHandler<GetOrderByIdQuery, Result<Ord
     public async Task<Result<OrderResponseQuery>> Handle(GetOrderByIdQuery request, CancellationToken cancellationToken)
     {
         var ordersResult = await _orderRepository.GetById(request.OrderId);
-        
+
         if (ordersResult.IsFailed)
             return Result.Fail("não foi encontrado");
 

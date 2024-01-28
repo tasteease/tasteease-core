@@ -4,4 +4,6 @@ using MediatR;
 
 namespace Fiap.TasteEase.Application.UseCases.FoodUseCase.Queries.GetAll;
 
-public class GetFoodAllQuery : IRequest<Result<IEnumerable<FoodResponseDto>>> { }
+public class GetFoodAllQuery : IRequest<Result<IEnumerable<FoodResponseDto>>>
+{
+}

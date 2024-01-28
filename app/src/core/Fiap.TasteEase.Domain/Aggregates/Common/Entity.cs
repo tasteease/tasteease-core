@@ -2,16 +2,17 @@
 
 public class Entity<TKey, TProps>
 {
+    private List<IEntityEvent> _domainEvents;
+    protected TKey? _id;
+
+    protected int? _requestedHashCode;
+
     public Entity(TProps props, TKey? id)
     {
         _id = Equals(id, default(TKey)) ? default : id;
-        _domainEvents = new();
+        _domainEvents = new List<IEntityEvent>();
         Props = props;
     }
-
-    protected int? _requestedHashCode;
-    protected TKey? _id;
-    private List<IEntityEvent> _domainEvents;
 
     public TKey? Id => _id;
     public TProps Props { get; internal set; }
@@ -35,7 +36,7 @@ public class Entity<TKey, TProps>
 
     protected bool IsTransient()
     {
-        return Equals(this._id, default(TKey));
+        return Equals(_id, default(TKey));
     }
 
     public override bool Equals(object obj)
@@ -43,18 +44,17 @@ public class Entity<TKey, TProps>
         if (obj == null || obj is not Entity<TKey, TProps>)
             return false;
 
-        if (Object.ReferenceEquals(this, obj))
+        if (ReferenceEquals(this, obj))
             return true;
 
-        if (this.GetType() != obj.GetType())
+        if (GetType() != obj.GetType())
             return false;
 
-        Entity<TKey, TProps> item = (Entity<TKey, TProps>)obj;
+        var item = (Entity<TKey, TProps>)obj;
 
-        if (item.IsTransient() || this.IsTransient())
+        if (item.IsTransient() || IsTransient())
             return false;
-        else
-            return Equals(item._id, this._id);
+        return Equals(item._id, _id);
     }
 
     public override int GetHashCode()
@@ -62,20 +62,21 @@ public class Entity<TKey, TProps>
         if (!IsTransient())
         {
             if (!_requestedHashCode.HasValue)
-                _requestedHashCode = this._id!.GetHashCode() ^ 31; // XOR for random distribution (http://blogs.msdn.com/b/ericlippert/archive/2011/02/28/guidelines-and-rules-for-gethashcode.aspx)
+                _requestedHashCode =
+                    _id!.GetHashCode() ^
+                    31; // XOR for random distribution (http://blogs.msdn.com/b/ericlippert/archive/2011/02/28/guidelines-and-rules-for-gethashcode.aspx)
 
             return _requestedHashCode.Value;
         }
-        else
-            return base.GetHashCode();
 
+        return base.GetHashCode();
     }
+
     public static bool operator ==(Entity<TKey, TProps> left, Entity<TKey, TProps> right)
     {
-        if (Object.Equals(left, null))
-            return (Object.Equals(right, null)) ? true : false;
-        else
-            return left.Equals(right);
+        if (Equals(left, null))
+            return Equals(right, null) ? true : false;
+        return left.Equals(right);
     }
 
     public static bool operator !=(Entity<TKey, TProps> left, Entity<TKey, TProps> right)
@@ -83,5 +84,3 @@ public class Entity<TKey, TProps>
         return !(left == right);
     }
 }
-
-

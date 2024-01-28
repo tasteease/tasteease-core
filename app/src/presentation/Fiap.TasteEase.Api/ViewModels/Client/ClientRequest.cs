@@ -1,8 +1,7 @@
-﻿namespace Fiap.TasteEase.Api.ViewModels.Client
+﻿namespace Fiap.TasteEase.Api.ViewModels.Client;
+
+public class CreateClientRequest
 {
-    public class CreateClientRequest
-    {
-        public string Name { get; set; }
-        public string TaxpayerNumber { get; set; }
-    }
+    public string Name { get; set; }
+    public string TaxpayerNumber { get; set; }
 }

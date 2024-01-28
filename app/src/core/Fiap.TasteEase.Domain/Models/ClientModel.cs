@@ -12,9 +12,7 @@ public class ClientModel : EntityModel
     [Column("id")]
     public Guid Id { get; set; }
 
-    [Column("name")]
-    [MaxLength(512)]
-    public string? Name { get; set; }
+    [Column("name")] [MaxLength(512)] public string? Name { get; set; }
 
     [Column("taxpayer_number")]
     [MaxLength(256)]

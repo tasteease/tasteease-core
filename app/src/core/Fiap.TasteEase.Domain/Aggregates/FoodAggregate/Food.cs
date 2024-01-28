@@ -7,7 +7,9 @@ namespace Fiap.TasteEase.Domain.Aggregates.FoodAggregate
 {
     public class Food : Entity<FoodId, FoodProps>, IFoodAggregate
     {
-        public Food(FoodProps props, FoodId? id = default) : base(props, id) { }
+        public Food(FoodProps props, FoodId? id = default) : base(props, id)
+        {
+        }
 
         public string? Name => Props.Name;
         public string? Description => Props.Description;
@@ -27,13 +29,15 @@ namespace Fiap.TasteEase.Domain.Aggregates.FoodAggregate
                 date,
                 date
             );
-            
+
             var food = new Food(foodProps);
             return Result.Ok(food);
         }
 
         public static Result<Food> Rehydrate(FoodProps props, FoodId id)
-            => Result.Ok(new Food(props, id));
+        {
+            return Result.Ok(new Food(props, id));
+        }
 
         public static Result<Food> Rehydrate(FoodModel model)
         {

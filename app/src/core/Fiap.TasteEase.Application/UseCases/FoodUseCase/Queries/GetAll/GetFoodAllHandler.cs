@@ -8,8 +8,8 @@ namespace Fiap.TasteEase.Application.UseCases.FoodUseCase.Queries.GetAll;
 
 public class GetFoodAllHandler : IRequestHandler<GetFoodAllQuery, Result<IEnumerable<FoodResponseDto>>>
 {
-    private readonly IMediator _mediator;
     private readonly IFoodRepository _foodRepository;
+    private readonly IMediator _mediator;
 
     public GetFoodAllHandler(IMediator mediator, IFoodRepository foodRepository)
     {
@@ -18,7 +18,8 @@ public class GetFoodAllHandler : IRequestHandler<GetFoodAllQuery, Result<IEnumer
     }
 
 
-    public async Task<Result<IEnumerable<FoodResponseDto>>> Handle(GetFoodAllQuery request, CancellationToken cancellationToken)
+    public async Task<Result<IEnumerable<FoodResponseDto>>> Handle(GetFoodAllQuery request,
+        CancellationToken cancellationToken)
     {
         var foodsResult = await _foodRepository.GetAll();
 

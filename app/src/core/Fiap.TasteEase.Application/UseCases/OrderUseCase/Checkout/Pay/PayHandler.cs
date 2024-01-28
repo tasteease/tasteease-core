@@ -16,10 +16,11 @@ public class PayOrderHandler : IRequestHandler<PayCommand, Result<OrderPaymentRe
         _orderRepository = orderRepository;
     }
 
-    public async Task<Result<OrderPaymentResponseCommand>> Handle(PayCommand request, CancellationToken cancellationToken)
+    public async Task<Result<OrderPaymentResponseCommand>> Handle(PayCommand request,
+        CancellationToken cancellationToken)
     {
         var orderResult = await _orderRepository.GetById(request.OrderId);
-        
+
         if (orderResult.IsFailed)
             return Result.Fail("não foi encontrado");
 

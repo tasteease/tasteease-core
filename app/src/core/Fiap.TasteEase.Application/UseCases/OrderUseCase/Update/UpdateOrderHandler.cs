@@ -17,13 +17,14 @@ public class UpdateOrderHandler : IRequestHandler<UpdateOrderCommand, Result<Ord
         _orderRepository = orderRepository;
     }
 
-    public async Task<Result<OrderResponseCommand>> Handle(UpdateOrderCommand request, CancellationToken cancellationToken)
+    public async Task<Result<OrderResponseCommand>> Handle(UpdateOrderCommand request,
+        CancellationToken cancellationToken)
     {
         var validStatus = new List<OrderStatus> { OrderStatus.Delivered, OrderStatus.Prepared, OrderStatus.Preparing };
         if (!validStatus.Contains(request.Status)) return Result.Fail("não é possível alterar para essa situação");
-        
+
         var orderResult = await _orderRepository.GetById(request.OrderId);
-        
+
         if (orderResult.IsFailed)
             return Result.Fail("não foi encontrado");
 
@@ -33,6 +34,7 @@ public class UpdateOrderHandler : IRequestHandler<UpdateOrderCommand, Result<Ord
         order.UpdateStatus(request.Status);
         _orderRepository.Update(order);
         await _orderRepository.SaveChanges();
-        return Result.Ok(new OrderResponseCommand(order.Id.Value, order.ClientId, totalPrice.ValueOrDefault, order.Status));
+        return Result.Ok(new OrderResponseCommand(order.Id.Value, order.ClientId, totalPrice.ValueOrDefault,
+            order.Status));
     }
 }

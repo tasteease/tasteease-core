@@ -1,5 +1,4 @@
-﻿using Fiap.TasteEase.Domain.Ports;
-using FluentResults;
+﻿using FluentResults;
 
 namespace Fiap.TasteEase.Domain.Aggregates.Common;
 

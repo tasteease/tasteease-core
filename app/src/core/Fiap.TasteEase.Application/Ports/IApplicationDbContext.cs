@@ -1,15 +1,13 @@
-﻿namespace Fiap.TasteEase.Application.Ports
+﻿namespace Fiap.TasteEase.Application.Ports;
+
+public interface IApplicationDbContext : IDisposable
 {
-    public interface IApplicationDbContext : IDisposable
-    {
-        Task SaveChangesAsync();
-        Task<IApplicationDbContextTransaction> BeginTransactionAsync();
+    Task SaveChangesAsync();
+    Task<IApplicationDbContextTransaction> BeginTransactionAsync();
+}
 
-    }
-
-    public interface IApplicationDbContextTransaction : IDisposable
-    {
-        Task CommitAsync();
-        Task RollbackAsync();
-    }
+public interface IApplicationDbContextTransaction : IDisposable
+{
+    Task CommitAsync();
+    Task RollbackAsync();
 }

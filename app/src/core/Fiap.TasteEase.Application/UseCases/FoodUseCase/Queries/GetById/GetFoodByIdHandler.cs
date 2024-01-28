@@ -7,8 +7,8 @@ namespace Fiap.TasteEase.Application.UseCases.FoodUseCase.Queries.GetById;
 
 public class GetFoodByIdHandler : IRequestHandler<GetFoodByIdQuery, Result<FoodResponseDto>>
 {
-    private readonly IMediator _mediator;
     private readonly IFoodRepository _foodRepository;
+    private readonly IMediator _mediator;
 
     public GetFoodByIdHandler(IMediator mediator, IFoodRepository foodRepository)
     {

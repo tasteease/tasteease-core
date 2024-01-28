@@ -1,5 +1,4 @@
-﻿using System.Resources;
-using MediatR;
+﻿using MediatR;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Fiap.TasteEase.Application;

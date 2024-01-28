@@ -19,17 +19,17 @@ public class ProcessPaymentHandler : IRequestHandler<ProcessPaymentCommand, Resu
     public async Task<Result<string>> Handle(ProcessPaymentCommand request, CancellationToken cancellationToken)
     {
         var orderResult = await _orderRepository.GetByPaymentReference(request.Reference);
-        
+
         if (orderResult.IsFailed)
             return Result.Fail("não foi encontrado");
 
         var order = orderResult.ValueOrDefault;
 
         order.ProcessPayment(request.Reference, request.Paid, request.PaidDate);
-        
+
         if (request.Paid)
             order.UpdateStatus(OrderStatus.Paid);
-        
+
         _orderRepository.Update(order);
         await _orderRepository.SaveChanges();
         return Result.Ok("processado com sucesso");

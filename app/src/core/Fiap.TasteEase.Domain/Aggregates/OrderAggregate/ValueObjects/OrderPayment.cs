@@ -1,6 +1,4 @@
-﻿using Fiap.TasteEase.Domain.Aggregates.FoodAggregate;
-
-namespace Fiap.TasteEase.Domain.Aggregates.OrderAggregate.ValueObjects;
+﻿namespace Fiap.TasteEase.Domain.Aggregates.OrderAggregate.ValueObjects;
 
 public class OrderPayment
 {

@@ -1,6 +1,4 @@
-﻿using Fiap.TasteEase.Domain.Ports;
-
-namespace Fiap.TasteEase.Domain.Ports;
+﻿namespace Fiap.TasteEase.Domain.Ports;
 
 public class EntityModel
 {

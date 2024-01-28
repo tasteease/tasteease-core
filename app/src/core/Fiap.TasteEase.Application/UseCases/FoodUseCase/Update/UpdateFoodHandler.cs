@@ -6,8 +6,8 @@ namespace Fiap.TasteEase.Application.UseCases.FoodUseCase.Update;
 
 public class UpdateFoodHandler : IRequestHandler<UpdateFoodCommand, Result<string>>
 {
-    private readonly IMediator _mediator;
     private readonly IFoodRepository _foodRepository;
+    private readonly IMediator _mediator;
 
     public UpdateFoodHandler(IMediator mediator, IFoodRepository foodRepository)
     {

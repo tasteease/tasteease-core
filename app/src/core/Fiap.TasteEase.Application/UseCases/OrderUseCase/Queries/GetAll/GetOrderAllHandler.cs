@@ -17,10 +17,11 @@ public class GetlOrderAllHandler : IRequestHandler<GetOrderAllQuery, Result<IEnu
         _orderRepository = orderRepository;
     }
 
-    public async Task<Result<IEnumerable<OrderResponseQuery>>> Handle(GetOrderAllQuery request, CancellationToken cancellationToken)
+    public async Task<Result<IEnumerable<OrderResponseQuery>>> Handle(GetOrderAllQuery request,
+        CancellationToken cancellationToken)
     {
         var ordersResult = await _orderRepository.GetByFilters(request.Status, request.ClientId);
-        
+
         if (ordersResult.IsFailed)
             return Result.Fail("Erro ao obter os pedidos");
 

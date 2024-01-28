@@ -9,6 +9,7 @@ namespace Fiap.TasteEase.Infra.Repository;
 public class ClientRepository
     : Repository<ClientModel, Client, ClientId, CreateClientProps, ClientProps>, IClientRepository
 {
-    public ClientRepository(ApplicationDbContext db) : base(db) { }
-
+    public ClientRepository(ApplicationDbContext db) : base(db)
+    {
+    }
 }

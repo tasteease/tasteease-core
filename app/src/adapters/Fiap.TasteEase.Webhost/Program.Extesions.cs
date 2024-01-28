@@ -1,7 +1,6 @@
-﻿using System;
-using System.Reflection;
+﻿using System.Reflection;
+using Fiap.TasteEase.Infra;
 using Mapster;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace Fiap.TasteEase.Api;
 
@@ -13,10 +12,10 @@ public static class Program
 
         var mappersAssemblies = Array.Empty<Assembly>();
 
-        mappersAssemblies = mappersAssemblies.Append(typeof(Infra.DependencyInjection).Assembly).ToArray();
+        mappersAssemblies = mappersAssemblies.Append(typeof(DependencyInjection).Assembly).ToArray();
         mappersAssemblies = mappersAssemblies.Append(typeof(Application.DependencyInjection).Assembly).ToArray();
 
-        config.Scan(assemblies: mappersAssemblies);
+        config.Scan(mappersAssemblies);
         config.Default.AddDestinationTransform(DestinationTransform.EmptyCollectionIfNull);
         config.Compile();
 

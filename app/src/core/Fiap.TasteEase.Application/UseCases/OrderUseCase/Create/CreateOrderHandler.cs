@@ -9,9 +9,9 @@ namespace Fiap.TasteEase.Application.UseCases.OrderUseCase.Create;
 
 public class CreateOrderHandler : IRequestHandler<CreateOrderCommand, Result<OrderResponseCommand>>
 {
+    private readonly IFoodRepository _foodRepository;
     private readonly IMediator _mediator;
     private readonly IOrderRepository _orderRepository;
-    private readonly IFoodRepository _foodRepository;
 
     public CreateOrderHandler(IMediator mediator, IOrderRepository orderRepository, IFoodRepository foodRepository)
     {
@@ -20,11 +20,12 @@ public class CreateOrderHandler : IRequestHandler<CreateOrderCommand, Result<Ord
         _foodRepository = foodRepository;
     }
 
-    public async Task<Result<OrderResponseCommand>> Handle(CreateOrderCommand request, CancellationToken cancellationToken)
+    public async Task<Result<OrderResponseCommand>> Handle(CreateOrderCommand request,
+        CancellationToken cancellationToken)
     {
         var orderProps = request.Adapt<CreateOrderProps>();
         var orderResult = Order.Create(orderProps);
-        
+
         if (orderResult.IsFailed)
             return Result.Fail("Erro ao registrar o pedido");
 
@@ -35,16 +36,17 @@ public class CreateOrderHandler : IRequestHandler<CreateOrderCommand, Result<Ord
             var orderFoods = request.Foods.Adapt<List<OrderFood>>();
             order.AddFood(orderFoods);
         }
+
         var result = _orderRepository.Add(order);
         await _orderRepository.SaveChanges();
 
         var foodIds = order.Foods.Select(s => s.FoodId);
         var foodsResult = await _foodRepository.GetByIds(foodIds);
         var totalPrice = order.GetTotalPrice(foodsResult.ValueOrDefault).ValueOrDefault;
-        
+
         if (orderResult.IsFailed)
             return Result.Fail("Erro ao calcular o valor");
-        
+
         return Result.Ok(new OrderResponseCommand(order.Id.Value, order.ClientId, totalPrice, order.Status));
     }
 }

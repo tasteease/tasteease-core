@@ -7,7 +7,9 @@ namespace Fiap.TasteEase.Domain.Aggregates.ClientAggregate
 {
     public class Client : Entity<ClientId, ClientProps>, IClientAggregate
     {
-        public Client(ClientProps props, ClientId? id = default) : base(props, id) { }
+        public Client(ClientProps props, ClientId? id = default) : base(props, id)
+        {
+        }
 
         public string Name => Props.Name;
         public string TaxpayerNumber => Props.Name;
@@ -23,13 +25,15 @@ namespace Fiap.TasteEase.Domain.Aggregates.ClientAggregate
                 date,
                 date
             );
-            
+
             var order = new Client(clientProps, new ClientId(Guid.NewGuid()));
             return Result.Ok(order);
         }
 
         public static Result<Client> Rehydrate(ClientProps props, ClientId id)
-        => Result.Ok(new Client(props, id));
+        {
+            return Result.Ok(new Client(props, id));
+        }
 
         public static Result<Client> Rehydrate(ClientModel model)
         {
