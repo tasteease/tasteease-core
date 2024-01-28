@@ -1,3 +1,5 @@
+*O antigo repositório foi migrado para este*
+
 # Taste Ease S/A
 
 - Para acessar recursos da Fase 1
