@@ -1,13 +1,44 @@
 _type: export
 __export_format: 4
-__export_date: 2023-10-31T00:43:43.716Z
+__export_date: 2024-01-29T02:41:30.288Z
 __export_source: insomnia.desktop.app:v2023.5.8
 resources:
+  - _id: req_b13a4210db894acfb3f9a58c86520a32
+    parentId: wrk_581ca40236234d92a9a0f919626d2f2e
+    modified: 1706448547205
+    created: 1706448512627
+    url: "{{ _.base_url }}/swagger"
+    name: Health
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers:
+      - name: User-Agent
+        value: insomnia/2023.5.8
+    authentication: {}
+    metaSortKey: -1706448512627
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: wrk_581ca40236234d92a9a0f919626d2f2e
+    parentId: null
+    modified: 1698193586732
+    created: 1698193586732
+    name: tasteease
+    description: ""
+    scope: collection
+    _type: workspace
   - _id: req_93fb7d1e293e4a0498041f0eeae40742
     parentId: fld_b02a522081424b52bd1fbbfe1960ca1f
-    modified: 1698624772129
+    modified: 1706488888355
     created: 1698620624387
-    url: http://localhost:5212/client
+    url: "{{ _.base_url }}/client"
     name: new client
     description: ""
     method: POST
@@ -15,7 +46,7 @@ resources:
       mimeType: application/json
       text: |-
         {
-          "name": "José Ivan",
+          "name": "Docente Novo",
           "taxpayerNumber": "999.999.999-99"
         }
     parameters: []
@@ -44,37 +75,23 @@ resources:
     environmentPropertyOrder: null
     metaSortKey: -1698620607976
     _type: request_group
-  - _id: wrk_581ca40236234d92a9a0f919626d2f2e
-    parentId: null
-    modified: 1698193586732
-    created: 1698193586732
-    name: tasteease
-    description: ""
-    scope: collection
-    _type: workspace
   - _id: req_da8107ec018c48bc8335f9a7f9a2e677
     parentId: fld_059c6b6da05542439d77307d53507b6b
-    modified: 1698624787388
+    modified: 1706488257560
     created: 1698610420828
-    url: http://localhost:5212/food
+    url: "{{ _.base_url }}/food"
     name: post
     description: ""
     method: POST
     body:
       mimeType: application/json
-      text: "{\r
-
-        \  \"name\": \"McChicken Supreme\",\r
-
-        \  \"description\": \"Um delicioso frango grelhado com alface
-        fresca, tomate, queijo suave e molho especial, tudo servido em um pão de
-        hambúrguer\",\r
-
-        \  \"price\": 12.99,\r
-
-        \  \"type\": 0\r
-
-        }"
+      text: |-
+        {
+          "name": "Pesci Cola",
+          "description": "Bebida de cola com um saber açucarado",
+          "price": 6.99,
+          "type": 0
+        }
     parameters: []
     headers:
       - name: accept
@@ -103,9 +120,9 @@ resources:
     _type: request_group
   - _id: req_469846c2817141ed8de86e3b284fb5d2
     parentId: fld_059c6b6da05542439d77307d53507b6b
-    modified: 1698624766102
+    modified: 1706399724872
     created: 1698609956798
-    url: http://localhost:5212/food
+    url: "{{ _.base_url }}/food"
     name: get all
     description: ""
     method: GET
@@ -126,16 +143,16 @@ resources:
     _type: request
   - _id: req_2309037cad764fa7aaed26e447825085
     parentId: fld_059c6b6da05542439d77307d53507b6b
-    modified: 1698624807315
+    modified: 1706471383879
     created: 1698610801538
-    url: http://localhost:5212/food/getbyid
+    url: "{{ _.base_url }}/food/getbyid"
     name: get by id
     description: ""
     method: GET
     body: {}
     parameters:
       - name: id
-        value: 852f1e91-e09c-4309-b696-0f0ed5855bf0
+        value: 05dc9223-7c2c-4ded-bb67-0f017e32458c
         disabled: false
         id: pair_b1ad41f91c4e49f0a0e23b46b610f22b
     headers:
@@ -153,10 +170,10 @@ resources:
     _type: request
   - _id: req_0f0437e884584e24b238c82b258e51c0
     parentId: fld_059c6b6da05542439d77307d53507b6b
-    modified: 1698624880876
+    modified: 1706471401678
     created: 1698610774602
-    url: http://localhost:5212/food
-    name: Update
+    url: "{{ _.base_url }}/food"
+    name: update
     description: ""
     method: PUT
     body:
@@ -187,9 +204,9 @@ resources:
     _type: request
   - _id: req_1e53d446ffe04d93bfc6ae3f299cec42
     parentId: fld_059c6b6da05542439d77307d53507b6b
-    modified: 1698624893144
+    modified: 1706399783859
     created: 1698610851753
-    url: http://localhost:5212/food
+    url: "{{ _.base_url }}/food"
     name: delete
     description: ""
     method: DELETE
@@ -215,11 +232,44 @@ resources:
     settingRebuildPath: true
     settingFollowRedirects: global
     _type: request
+  - _id: req_645815ce51794e30b0a43c3bb3fb433c
+    parentId: fld_db33bc2312284b22be7ad549355276c2
+    modified: 1706486060272
+    created: 1706486004452
+    url: "{{ _.base_url }}/order/getwithdescription"
+    name: get with description
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers:
+      - name: accept
+        value: text/plain
+    authentication: {}
+    metaSortKey: -1706486004453
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_db33bc2312284b22be7ad549355276c2
+    parentId: wrk_581ca40236234d92a9a0f919626d2f2e
+    modified: 1698512920946
+    created: 1698512920946
+    name: order
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1698512920946
+    _type: request_group
   - _id: req_8cb06c09176b45a897017271e60153e9
     parentId: fld_db33bc2312284b22be7ad549355276c2
-    modified: 1698625428567
+    modified: 1706399790096
     created: 1698594396809
-    url: http://localhost:5212/order
+    url: "{{ _.base_url }}/order"
     name: get by filter
     description: ""
     method: GET
@@ -255,21 +305,13 @@ resources:
     settingRebuildPath: true
     settingFollowRedirects: global
     _type: request
-  - _id: fld_db33bc2312284b22be7ad549355276c2
-    parentId: wrk_581ca40236234d92a9a0f919626d2f2e
-    modified: 1698512920946
-    created: 1698512920946
-    name: order
-    description: ""
-    environment: {}
-    environmentPropertyOrder: null
-    metaSortKey: -1698512920946
-    _type: request_group
   - _id: req_6147a08240c84ad283db100089cc6068
     parentId: fld_db33bc2312284b22be7ad549355276c2
-    modified: 1698625437832
+    modified: 1706488655590
     created: 1698603081523
-    url: http://localhost:5212/order/cbf8b136-2c88-483e-8096-8b93e88ec0f8
+    url: "{{ _.base_url }}/order/{% response 'body',
+      'req_cc849d89931741798a5749a7bd6f8b81', 'b64::JC5kYXRhLm9yZGVySWQ=::46b',
+      'never', 60 %}"
     name: get by id
     description: ""
     method: GET
@@ -300,9 +342,9 @@ resources:
     _type: request
   - _id: req_b04a5bcf86334af18d816eeaf8d19c6e
     parentId: fld_db33bc2312284b22be7ad549355276c2
-    modified: 1698712978325
+    modified: 1706489828623
     created: 1698605322889
-    url: http://localhost:5212/order/cbf8b136-2c88-483e-8096-8b93e88ec0f8/status
+    url: "{{ _.base_url }}/order/da8049a1-b0be-4e68-bf81-7a88b93336c1/status"
     name: update status
     description: ""
     method: POST
@@ -310,7 +352,7 @@ resources:
       mimeType: application/json
       text: |-
         {
-        	"status": 3
+        	"status": 6
         }
     parameters:
       - id: pair_8322d881aa684b8e8544ce334fe6d40f
@@ -340,9 +382,11 @@ resources:
     _type: request
   - _id: req_550d9d56a1bf4f029cddd2673c7e5e49
     parentId: fld_db33bc2312284b22be7ad549355276c2
-    modified: 1698625469794
+    modified: 1706488717843
     created: 1698613234116
-    url: http://localhost:5212/order/cbf8b136-2c88-483e-8096-8b93e88ec0f8/pay
+    url: "{{ _.base_url }}/order/{% response 'body',
+      'req_cc849d89931741798a5749a7bd6f8b81', 'b64::JC5kYXRhLm9yZGVySWQ=::46b',
+      'never', 60 %}/pay"
     name: pay
     description: ""
     method: POST
@@ -363,19 +407,19 @@ resources:
     _type: request
   - _id: req_e77eabe3d44144d7b66c9093d11884f8
     parentId: fld_db33bc2312284b22be7ad549355276c2
-    modified: 1698625033098
+    modified: 1706488749593
     created: 1698613921308
-    url: http://localhost:5212/order/process_payment
+    url: "{{ _.base_url }}/order/process_payment"
     name: process payment
     description: ""
     method: POST
     body:
       mimeType: application/json
-      text: |-
+      text: >-
         {
-        	"reference": "ORDER_ID-ea9ce65f-d3ba-4ca0-bd74-ad2c820594ac",
+        	"reference": "ORDER_ID-{% response 'body', 'req_cc849d89931741798a5749a7bd6f8b81', 'b64::JC5kYXRhLm9yZGVySWQ=::46b', 'never', 60 %}",
         	"paid": true,
-        	"paidDate": "2023-10-29T21:13:13.988Z"
+        	"paidDate": "2023-01-29T21:13:13.988Z"
         }
     parameters: []
     headers:
@@ -395,22 +439,26 @@ resources:
     _type: request
   - _id: req_cc849d89931741798a5749a7bd6f8b81
     parentId: fld_db33bc2312284b22be7ad549355276c2
-    modified: 1698625408144
+    modified: 1706488959183
     created: 1698512931698
-    url: http://localhost:5212/order
+    url: "{{ _.base_url }}/order"
     name: create
     description: ""
     method: POST
     body:
       mimeType: application/json
-      text: |-
+      text: >-
         {
           "description": "Novo pedido",
-          "clientId": "e5e8c57f-75ce-4238-84ec-4313b0b8b7db",
+          "clientId": "{% response 'body', 'req_93fb7d1e293e4a0498041f0eeae40742', 'b64::JC5kYXRh::46b', 'never', 60 %}",
         	"foods": [
         		{
-        			"foodId": "13e6658b-2211-4af9-a487-ab096365c9b9",
-        			"quantity": 3
+        			"foodId": "ea09c774-1d3f-4595-a4cf-42da447f1e7a",
+        			"quantity": 1
+        		},
+        		{
+        			"foodId": "f12e808f-51ca-4c55-8e5b-6a8e06f2dd55",
+        			"quantity": 1
         		}
         	]
         }
@@ -432,11 +480,11 @@ resources:
     _type: request
   - _id: env_a165e83b09a133d18b4b4d2b0edfb7a70a0f6904
     parentId: wrk_581ca40236234d92a9a0f919626d2f2e
-    modified: 1698624711437
+    modified: 1706399395524
     created: 1698193586736
     name: Base Environment
     data:
-      base_url: http://localhost:5212
+      base_url: http://localhost:30002
     dataPropertyOrder:
       "&":
         - base_url
