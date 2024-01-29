@@ -1,9 +1,13 @@
-*O antigo repositório foi migrado para este*
+_O antigo repositório foi migrado para este_
 
 # Taste Ease S/A
 
 - Para acessar recursos da Fase 1
 - [Fase 1](/miscs/readme/fase-1.md)
+
+## Video de apresentação
+
+[![Watch the video](/miscs/ECRA.jpg)](https://youtu.be/YqYHhsRq4WE)
 
 ## Miro DDD
 

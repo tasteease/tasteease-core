@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: tasteease-api
-          image: estrng/tasteease:0.0.16
+          image: estrng/tasteease:0.0.19
           ports:
             - containerPort: 80
           env:
