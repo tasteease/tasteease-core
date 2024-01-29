@@ -60,7 +60,7 @@ public class OrderRepository
             .ThenBy(x => x.Status == OrderStatus.Preparing)
             .ThenBy(x => x.Status == OrderStatus.Delivered);
 
-        var models = await query.OrderByDescending(o => o.CreatedAt).ToListAsync();
+        var models = await query.OrderBy(o => o.CreatedAt).ToListAsync();
         var aggregates = models.Select(model =>
             Order.Rehydrate(model).ValueOrDefault);
         return Result.Ok(aggregates);
