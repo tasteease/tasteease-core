@@ -39,6 +39,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    - name: Build
+      run: dotnet build app/TasteEase.sln
     - name: Testing in linux environment
       run: dotnet test app/TasteEase.sln --no-build
 
@@ -48,6 +50,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    - name: Build
+      run: dotnet build app/TasteEase.sln
     - name: Testing in windows environment
       run: dotnet test app/TasteEase.sln --no-build
   
