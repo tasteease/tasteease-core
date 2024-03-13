@@ -50,6 +50,8 @@ jobs:
     - uses: actions/checkout@v2
     - name: Check SonarQube server status
       run: curl -I ${{ secrets.SONAR_HOST_URL }}
+    - name: Echo token
+      run: echo ${{ secrets.SONAR_TOKEN }}
     - name: SonarQube Scan
       uses: sonarsource/sonarqube-scan-action@master
       env:
