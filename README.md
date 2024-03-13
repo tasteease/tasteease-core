@@ -1,5 +1,9 @@
 _O antigo repositório foi migrado para este_
 
+[![Deploy to Amazon EKS](https://github.com/tasteease/tasteease/actions/workflows/dotnet.yml/badge.svg)](https://github.com/tasteease/tasteease/actions/workflows/dotnet.yml)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=tasteease_tasteease&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=tasteease_tasteease)
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=tasteease_tasteease&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=tasteease_tasteease)
+
 # Taste Ease S/A
 
 - Para acessar recursos da Fase 1
