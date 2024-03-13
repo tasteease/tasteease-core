@@ -39,7 +39,7 @@ jobs:
 
     steps:
     - name: Testing in linux environment
-      run: dotnet test --no-build --verbosity normal app/TasteEase.sln
+      run: dotnet test --no-build --verbosity normal app/tests
 
   test-windows:
     needs: build
@@ -47,7 +47,7 @@ jobs:
 
     steps:
     - name: Testing in windows environment
-      run: dotnet test --no-build --verbosity normal app/TasteEase.sln
+      run: dotnet test --no-build --verbosity normal app/tests
   
   sonarqube:
     needs: [test-linux, test-windows]
