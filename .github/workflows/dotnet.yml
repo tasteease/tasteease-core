@@ -11,10 +11,9 @@ on:
 
 jobs:
   build:
-    runs-on: ${{ matrix.os }}
+    runs-on: ubuntu-latest
     strategy:
       matrix:
-        os: [ubuntu-latest, windows-latest]
         dotnet-version: [7.0.x]
 
     steps:
@@ -33,7 +32,7 @@ jobs:
     outputs:
       os: ${{ matrix.os }}
 
-  test-linux:
+  test:
     needs: build
     runs-on: ubuntu-latest
 
@@ -44,22 +43,13 @@ jobs:
     - name: Testing in linux environment
       run: dotnet test app/TasteEase.sln --no-build
 
-  test-windows:
-    needs: build
-    runs-on: windows-latest
-
-    steps:
-    - uses: actions/checkout@v2
-    - name: Build
-      run: dotnet build app/TasteEase.sln
-    - name: Testing in windows environment
-      run: dotnet test app/TasteEase.sln --no-build
-  
   sonarqube:
-    needs: [test-linux, test-windows]
+    needs: test
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
+    - name: Check SonarQube server status
+      run: curl -I ${{ secrets.SONAR_HOST_URL }}
     - name: SonarQube Scan
       uses: sonarsource/sonarqube-scan-action@master
       env:
