@@ -28,7 +28,7 @@ jobs:
     - name: Restore dependencies
       run: dotnet restore app/TasteEase.sln
     - name: Build
-      run: dotnet build --no-restore
+      run: dotnet build --no-restore app/TasteEase.sln
 
     outputs:
       os: ${{ matrix.os }}
