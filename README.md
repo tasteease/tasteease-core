@@ -6,7 +6,7 @@ _O antigo repositório foi migrado para este_
 
 # Taste Ease S/A
 
-- Para acessar recursos da Fase 1
+- Para acessar recursos da Fase 1.
 - [Fase 1](/miscs/readme/fase-1.md)
 
 ## Video de apresentação
