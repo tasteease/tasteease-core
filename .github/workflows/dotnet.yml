@@ -38,6 +38,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - uses: actions/checkout@v2
     - name: Testing in linux environment
       run: dotnet test app/TasteEase.sln --no-build
 
@@ -46,6 +47,7 @@ jobs:
     runs-on: windows-latest
 
     steps:
+    - uses: actions/checkout@v2
     - name: Testing in windows environment
       run: dotnet test app/TasteEase.sln --no-build
   
