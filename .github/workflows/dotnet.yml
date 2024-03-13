@@ -41,22 +41,32 @@ jobs:
     - name: Build
       run: dotnet build app/TasteEase.sln
     - name: Testing in linux environment
-      run: dotnet test app/TasteEase.sln --no-build
+      run: |
+        dotnet test app/TasteEase.sln --no-build --collect:"XPlat Code Coverage"
+        dotnet tool install --global dotnet-reportgenerator-globaltool
+        reportgenerator "-reports:**/coverage.cobertura.xml" "-targetdir:coveragereport" -reporttypes:"Cobertura"
+    - name: Upload coverage to GitHub
+      uses: actions/upload-artifact@v2
+      with:
+        name: coverage
+        path: coveragereport/
 
   sonarqube:
     needs: test
     runs-on: ubuntu-latest
+
     steps:
     - uses: actions/checkout@v2
-    - name: Check SonarQube server status
-      run: curl -I ${{ secrets.SONAR_HOST_URL }}
-    - name: Echo token
-      run: echo ${{ secrets.SONAR_TOKEN }}
+    - name: Download coverage report
+      uses: actions/download-artifact@v2
+      with:
+        name: coverage
     - name: SonarQube Scan
       uses: sonarsource/sonarqube-scan-action@master
       env:
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
+        EXTRA_ARGS: -Dsonar.coverageReportPaths=coveragereport/coverage.cobertura.xml
 
   homologation:
     needs: [sonarqube]
