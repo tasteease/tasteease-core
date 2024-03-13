@@ -66,9 +66,7 @@ jobs:
       env:
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
-        SONAR_PROJECT_KEY: ${{ secrets.SONAR_PROJECT_KEY }}
-        SONAR_ORGANIZATION: ${{ secrets.SONAR_ORGANIZATION }}
-        EXTRA_ARGS: -Dsonar.coverageReportPaths=coveragereport/coverage.cobertura.xml -Dsonar.projectKey=${{ secrets.SONAR_PROJECT_KEY }} -Dsonar.organization=${{ secrets.SONAR_ORGANIZATION }}
+        EXTRA_ARGS: -Dsonar.coverageReportPaths=coveragereport/coverage.cobertura.xml
 
   homologation:
     needs: [sonarqube]
