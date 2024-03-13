@@ -60,7 +60,7 @@ jobs:
         SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
 
   homologation:
-    needs: test
+    needs: [sonarqube]
     runs-on: ubuntu-latest
 
     steps:
