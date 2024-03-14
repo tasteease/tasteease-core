@@ -31,14 +31,14 @@ public class ClientController : ControllerBase
         {
             var command = request.Adapt<Create>();
 
-            var response = await _mediator.Send(command);
+            var mediatorResponse = await _mediator.Send(command);
 
-            if (response.IsFailed)
+            if (mediatorResponse.IsFailed)
                 return StatusCode(StatusCodes.Status400BadRequest,
                     new ResponseViewModel<Guid?>
                     {
                         Error = true,
-                        ErrorMessages = response.Errors.Select(x => x.Message),
+                        ErrorMessages = mediatorResponse.Errors.Select(x => x.Message),
                         Data = null!
                     }
                 );
@@ -46,7 +46,7 @@ public class ClientController : ControllerBase
             return StatusCode(StatusCodes.Status201Created,
                 new ResponseViewModel<Guid?>
                 {
-                    Data = response.ValueOrDefault
+                    Data = mediatorResponse.ValueOrDefault
                 }
             );
         }
