@@ -1,9 +1,8 @@
 name: preprod-ci
 
 on:
-  push:
-   tags:
-     - 'v[0-99]+.[0-99]+.[0-99]+'
+  release:
+    types: [published]
 
 jobs:
   push_to_registry:
