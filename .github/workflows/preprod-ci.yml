@@ -3,7 +3,7 @@ name: preprod-ci
 on:
   push:
    tags:
-     - 'v[99]+.[0-9]+.[0-9]+'
+     - 'v[0-99]+.[0-99]+.[0-99]+'
 
 jobs:
   push_to_registry:
