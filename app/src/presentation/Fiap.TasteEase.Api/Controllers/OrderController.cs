@@ -10,6 +10,7 @@ using Fiap.TasteEase.Application.UseCases.OrderUseCase.Update;
 using Fiap.TasteEase.Domain.Aggregates.OrderAggregate.ValueObjects;
 using Mapster;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -18,6 +19,7 @@ namespace Fiap.TasteEase.Api.Controllers;
 
 [ApiController]
 [Route("[controller]")]
+[Authorize]
 public class OrderController : ControllerBase
 {
     private readonly ILogger<OrderController> _logger;
@@ -33,6 +35,7 @@ public class OrderController : ControllerBase
     }
 
     [HttpPost]
+    [AllowAnonymous]
     public async Task<ActionResult<ResponseViewModel<CreateOrderResponse>>> Create([FromBody] OrderRequest request)
     {
         try
@@ -110,6 +113,7 @@ public class OrderController : ControllerBase
 
 
     [HttpGet("/[controller]/GetWithDescription")]
+    [AllowAnonymous]
     public async Task<ActionResult<ResponseViewModel<IEnumerable<OrderWithDescriptionResponse>>>> GetWithDescription()
     {
         try
@@ -222,6 +226,7 @@ public class OrderController : ControllerBase
     }
 
     [HttpPost("/[controller]/{orderId}/pay")]
+    [AllowAnonymous]
     public async Task<ActionResult<ResponseViewModel<OrderPaymentResponse>>> Pay([FromRoute] Guid orderId)
     {
         try
