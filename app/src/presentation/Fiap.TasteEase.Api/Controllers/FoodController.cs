@@ -7,6 +7,7 @@ using Fiap.TasteEase.Application.UseCases.FoodUseCase.Queries.GetById;
 using Fiap.TasteEase.Application.UseCases.FoodUseCase.Update;
 using Mapster;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -15,6 +16,7 @@ namespace Fiap.TasteEase.Api.Controllers;
 
 [ApiController]
 [Route("[controller]")]
+[Authorize]
 public class FoodController : ControllerBase
 {
     private readonly ILogger<FoodController> _logger;
@@ -29,6 +31,7 @@ public class FoodController : ControllerBase
     }
 
     [HttpGet]
+    [AllowAnonymous]
     public async Task<ActionResult<ResponseViewModel<IEnumerable<FoodResponseDto>>>> GetAll()
     {
         try
