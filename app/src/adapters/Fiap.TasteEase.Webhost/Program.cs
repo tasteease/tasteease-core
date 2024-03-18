@@ -13,7 +13,7 @@ builder.Services.AddMapsterConfiguration();
 builder.Services.AddApplicationCore();
 builder.Services.AddEfCoreConfiguration(builder.Configuration);
 builder.Services.AddCognitoIdentity();
-builder.Services.AddRestApi();
+builder.Services.AddRestApi(builder.Configuration);
 
 var app = builder.Build();
 
