@@ -61,12 +61,8 @@ public static class DependencyInjection
 
     public static WebApplication UseRestApi(this WebApplication app)
     {
-        // Configure the HTTP request pipeline.
-        if (app.Environment.IsDevelopment())
-        {
-            app.UseSwagger();
-            app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Taste Ease v1"));
-        }
+        app.UseSwagger();
+        app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Taste Ease v1"));
 
         app.UseHttpsRedirection();
         app.UseAuthentication();
