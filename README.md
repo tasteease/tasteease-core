@@ -14,23 +14,17 @@ Fases:
 
 [![Watch the video](/miscs/ECRA.jpg)](https://youtu.be/YqYHhsRq4WE)
 
-## Repositório rds (database)
+## Repositórios da infraestrutura
 
-- [Taste Ease Análise DDD](https://github.com/tasteease/tasteease-tf-db)
-
-## Repositório cognito com lambda (auth identity)
-
-- [](https://github.com/tasteease/tasteease-tf-cognito)
-
-## Repositório ecs (cluster)
-
-![Imgur](https://github.com/tasteease/tasteease-tf-ecs)
+- [Repositório rds (database)](https://github.com/tasteease/tasteease-tf-db)
+- [Repositório cognito com lambda (auth identity)](https://github.com/tasteease/tasteease-tf-cognito)
+- [Repositório ecs (cluster)](https://github.com/tasteease/tasteease-tf-ecs)
 
 ### Mais
 
 Os repositórios estão com a branch main (principal) travadas para alterações, que somente são aceitas com um pull request com uma aprovação de alguns dos membros da equipe. As pipelines e workflows foram criados em todos os repositórios:
 
-- Este repositório possui um workflow para executar os testes unitários, além de usar o SonarQube para validação do código. Também está realizando o build da aplicação e fazendo o push da imagem no docker-hub.
+- Este repositório possui um workflow para executar os `testes unitários`, além de usar o `SonarQube` para validação do código. Também está realizando o `build` da aplicação e fazendo o `push` da imagem no docker-hub.
 - Os repositórios de infraestrutura (rds, cognito e ecs) estão configurados com dois workflows que executam o comando de `plan` e o `apply` no terraform cloud para serem aplicados na AWS.
 
 Authored by:
