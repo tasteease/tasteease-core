@@ -27,6 +27,8 @@ Os repositórios estão com a branch main (principal) travadas para alterações
 - Este repositório possui um workflow para executar os `testes unitários`, além de usar o `SonarQube` para validação do código. Também está realizando o `build` da aplicação e fazendo o `push` da imagem no docker-hub.
 - Os repositórios de infraestrutura (rds, cognito e ecs) estão configurados com dois workflows que executam o comando de `plan` e o `apply` no terraform cloud para serem aplicados na AWS.
 
+Alteração video.
+
 Authored by:
 
 RM352294 - [Carlos Roberto Nascimento Junior](https://github.com/carona-jr)
