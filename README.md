@@ -6,53 +6,26 @@ _O antigo repositório foi migrado para este_
 
 # Taste Ease S/A
 
-- Para acessar recursos da Fase 1.
-- [Fase 1](/miscs/readme/fase-1.md)
+Fases:
+- [Fase 1](/miscs/fase-1/readme/fase-1.md)
+- [Fase 2](/miscs/fase-2/readme/fase-2.md)
 
 ## Video de apresentação
 
-[![Watch the video](/miscs/ECRA.jpg)](https://youtu.be/YqYHhsRq4WE)
+[![Watch the video](/miscs/fase-1/ECRA.jpg)](https://youtu.be/YqYHhsRq4WE)
 
-## Miro DDD
+## Repositórios da infraestrutura
 
-- [Taste Ease Análise DDD](https://miro.com/app/board/uXjVMm2nBP0=/?share_link_id=573849043414)
+- [Repositório rds (database)](https://github.com/tasteease/tasteease-tf-db)
+- [Repositório cognito com lambda (auth identity)](https://github.com/tasteease/tasteease-tf-cognito)
+- [Repositório ecs (cluster)](https://github.com/tasteease/tasteease-tf-ecs)
 
-## Kubernetes
+### Mais
 
-![Imgur](./miscs/k8s-diagram.png)
+Os repositórios estão com a branch main (principal) travadas para alterações, que somente são aceitas com um pull request com uma aprovação de alguns dos membros da equipe. As pipelines e workflows foram criados em todos os repositórios:
 
-## Database diagram
-
-![Imgur](./miscs/database-diagram.png)
-
-### Passos para execução da infraestrutura com Kubernetes.
-
-- Assumindo que o docker desktop/kubernets ou minikube já está instalado e configurado, execute os seguintes comandos:
-  - Certifique-se de que você está dendo da pasta "infra/" do projeto
-
-```bash
-# Crie o namespace da aplicação
-kubectl create namespace tasteease
-
-# Crie os volumes de persistência para o banco de dados
-kubectl apply -f volumes/db-storage.yaml
-kubectl get pv,pvc -n tasteease
-
-# Criar o config map
-kubectl apply -f config/cfg-tasteease-api.yaml
-kubectl get configmap -n tasteease
-
-# Criar os pods do banco de dados
-kubectl apply -f deployments/deployment-db.yaml
-
-# Criar os pods da API com o Deployment
-kubectl apply -f deployments/deployment-api.yaml
-kubectl apply -f services/services.yaml
-
-# Criar metrics server and hpa
-kubectl apply -f hpas/metrics.yaml
-kubectl apply -f hpas/hpa-tasteease-api.yaml
-```
+- Este repositório possui um workflow para executar os `testes unitários`, além de usar o `SonarQube` para validação do código. Também está realizando o `build` da aplicação e fazendo o `push` da imagem no docker-hub.
+- Os repositórios de infraestrutura (rds, cognito e ecs) estão configurados com dois workflows que executam o comando de `plan` e o `apply` no terraform cloud para serem aplicados na AWS.
 
 Authored by:
 
