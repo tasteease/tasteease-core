@@ -25,7 +25,7 @@ _O antigo repositório foi migrado para este_
 
 ![Imgur](./miscs/database-diagram.png)
 
-### Passos para execução da infraestrutura com Kubernetes
+### Passos para execução da infraestrutura com Kubernetes.
 
 - Assumindo que o docker desktop/kubernets ou minikube já está instalado e configurado, execute os seguintes comandos:
   - Certifique-se de que você está dendo da pasta "infra/" do projeto
