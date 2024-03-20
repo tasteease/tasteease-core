@@ -12,7 +12,7 @@ Fases:
 
 ## Video de apresentação
 
-[![Watch the video](/miscs/fase-1/ECRA.jpg)](https://youtu.be/YqYHhsRq4WE)
+[![Watch the video](/miscs/fase-1/ECRA.jpg)](https://youtu.be/LP8lCToo7as)
 
 ## Repositórios da infraestrutura
 
