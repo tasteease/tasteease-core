@@ -13,7 +13,6 @@ public class ApplicationDbContext : DbContext
     }
 
     public DbSet<OrderModel> Orders { get; set; } = null!;
-    public DbSet<ClientModel> Clients { get; set; } = null!;
     public DbSet<FoodModel> Foods { get; set; } = null!;
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -34,16 +33,6 @@ public class ApplicationDbContext : DbContext
             .Entity<FoodModel>()
             .Property(e => e.Price)
             .HasPrecision(18, 2);
-
-        modelBuilder
-            .Entity<OrderPaymentModel>()
-            .Property(e => e.Amount)
-            .HasPrecision(18, 2);
-
-        modelBuilder
-            .Entity<OrderPaymentModel>()
-            .HasIndex(e => e.Reference)
-            .IsUnique();
 
         base.OnModelCreating(modelBuilder);
     }

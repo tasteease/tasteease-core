@@ -29,7 +29,6 @@ internal class OrderQueryMapper : IRegister
         config.ForType<Domain.Aggregates.OrderAggregate.Order, OrderWithDescriptionQuery>()
             .Map(model => model.Id, src => src.Id.Value)
             .Map(model => model.Description, src => src.Description)
-            .Map(model => model.ClientName, src => src.Client.Name)
             .Map(model => model.TotalPrice, src => src.GetTotalPrice())
             .Map(model => model.CreatedAt, src => src.CreatedAt)
             .Map(model => model.UpdatedAt, src => src.UpdatedAt);
