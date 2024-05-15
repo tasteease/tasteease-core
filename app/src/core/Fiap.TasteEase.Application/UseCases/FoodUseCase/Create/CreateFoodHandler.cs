@@ -8,11 +8,9 @@ namespace Fiap.TasteEase.Application.UseCases.FoodUseCase.Create;
 public class CreateFoodHandler : IRequestHandler<CreateFoodCommand, Result<string>>
 {
     private readonly IFoodRepository _foodRepository;
-    private readonly IMediator _mediator;
 
-    public CreateFoodHandler(IMediator mediator, IFoodRepository foodRepository)
+    public CreateFoodHandler(IFoodRepository foodRepository)
     {
-        _mediator = mediator;
         _foodRepository = foodRepository;
     }
 
