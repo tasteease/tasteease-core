@@ -7,12 +7,12 @@ using Moq;
 
 namespace Fiap.TasteEase.Application.Tests.Food;
 
-public class QueryFoodUseCase : IClassFixture<GetFoodFixture>
+public class QueryFoodUseCases : IClassFixture<GetFoodFixture>
 { 
     private readonly Mock<IFoodRepository> _foodRepository = new();
     private readonly GetFoodFixture _fixture;
 
-    public QueryFoodUseCase(GetFoodFixture fixture)
+    public QueryFoodUseCases(GetFoodFixture fixture)
     {
         _fixture = fixture;
     }

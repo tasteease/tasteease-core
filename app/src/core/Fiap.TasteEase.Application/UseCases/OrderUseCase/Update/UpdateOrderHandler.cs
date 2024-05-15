@@ -8,12 +8,10 @@ namespace Fiap.TasteEase.Application.UseCases.OrderUseCase.Update;
 
 public class UpdateOrderHandler : IRequestHandler<UpdateOrderCommand, Result<OrderResponseCommand>>
 {
-    private readonly IMediator _mediator;
     private readonly IOrderRepository _orderRepository;
 
-    public UpdateOrderHandler(IMediator mediator, IOrderRepository orderRepository)
+    public UpdateOrderHandler(IOrderRepository orderRepository)
     {
-        _mediator = mediator;
         _orderRepository = orderRepository;
     }
 

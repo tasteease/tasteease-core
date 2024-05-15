@@ -8,12 +8,12 @@ using Moq;
 
 namespace Fiap.TasteEase.Application.Tests.Food;
 
-public class CommandFoodUseCase : IClassFixture<CommandFoodFixture>
+public class CommandFoodUseCases : IClassFixture<CommandFoodFixture>
 { 
     private readonly Mock<IFoodRepository> _foodRepository = new();
     private readonly CommandFoodFixture _fixture;
 
-    public CommandFoodUseCase(CommandFoodFixture fixture)
+    public CommandFoodUseCases(CommandFoodFixture fixture)
     {
         _fixture = fixture;
     }
