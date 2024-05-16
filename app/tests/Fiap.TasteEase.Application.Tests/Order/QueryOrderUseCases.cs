@@ -10,6 +10,7 @@ using Moq;
 
 namespace Fiap.TasteEase.Application.Tests.Order;
 
+[Collection("Collection_Fixture")]
 public class QueryOrderUseCases : IClassFixture<OrderFixture>
 {
     private readonly Mock<IOrderRepository> _orderRepository = new();

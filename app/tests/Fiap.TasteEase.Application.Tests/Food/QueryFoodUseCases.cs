@@ -7,6 +7,7 @@ using Moq;
 
 namespace Fiap.TasteEase.Application.Tests.Food;
 
+[Collection("Collection_Fixture")]
 public class QueryFoodUseCases : IClassFixture<GetFoodFixture>
 { 
     private readonly Mock<IFoodRepository> _foodRepository = new();

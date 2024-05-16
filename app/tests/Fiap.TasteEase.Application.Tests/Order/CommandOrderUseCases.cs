@@ -7,6 +7,7 @@ using Moq;
 
 namespace Fiap.TasteEase.Application.Tests.Order;
 
+[Collection("Collection_Fixture")]
 public class CommandOrderUseCases : IClassFixture<OrderFixture>
 {
     private readonly Mock<IFoodRepository> _foodRepository = new();

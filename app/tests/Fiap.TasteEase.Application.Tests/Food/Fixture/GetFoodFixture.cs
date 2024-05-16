@@ -17,22 +17,8 @@ public class GetFoodFixture
     public GetFoodFixture()
     {
         var id = Guid.NewGuid();
-        ConfigMapster();
         CreateQuery(id);
         CreateFood(id);
-    }
-    
-    private void ConfigMapster()
-    {
-        var config = TypeAdapterConfig.GlobalSettings;
-
-        var mappersAssemblies = Array.Empty<Assembly>();
-
-        mappersAssemblies = mappersAssemblies.Append(typeof(DependencyInjection).Assembly).ToArray();
-
-        config.Scan(assemblies: mappersAssemblies);
-        config.Default.AddDestinationTransform(DestinationTransform.EmptyCollectionIfNull);
-        config.Compile();
     }
     
     private void CreateQuery(Guid id)

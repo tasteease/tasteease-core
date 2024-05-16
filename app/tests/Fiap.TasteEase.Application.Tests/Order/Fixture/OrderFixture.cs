@@ -1,6 +1,4 @@
-﻿using System.Reflection;
-using Fiap.TasteEase.Application.UseCases.OrderUseCase.Create;
-using Fiap.TasteEase.Application.UseCases.OrderUseCase.Queries;
+﻿using Fiap.TasteEase.Application.UseCases.OrderUseCase.Create;
 using Fiap.TasteEase.Application.UseCases.OrderUseCase.Queries.GetAll;
 using Fiap.TasteEase.Application.UseCases.OrderUseCase.Queries.GetById;
 using Fiap.TasteEase.Application.UseCases.OrderUseCase.Queries.GetWithDescription;
@@ -8,7 +6,6 @@ using Fiap.TasteEase.Application.UseCases.OrderUseCase.Update;
 using Fiap.TasteEase.Domain.Aggregates.FoodAggregate.ValueObjects;
 using Fiap.TasteEase.Domain.Aggregates.OrderAggregate;
 using Fiap.TasteEase.Domain.Aggregates.OrderAggregate.ValueObjects;
-using Mapster;
 
 namespace Fiap.TasteEase.Application.Tests.Order.Fixture;
 
@@ -36,20 +33,6 @@ public class OrderFixture
         CreateOrderFood(orderFoodId, foodId);
         CreateOrder(orderId, clientId);
         CreateMockCommand(clientId, foodId, orderId);
-        ConfigMapster();
-    }
-
-    private void ConfigMapster()
-    {
-        var config = TypeAdapterConfig.GlobalSettings;
-
-        var mappersAssemblies = Array.Empty<Assembly>();
-
-        mappersAssemblies = mappersAssemblies.Append(typeof(DependencyInjection).Assembly).ToArray();
-
-        config.Scan(assemblies: mappersAssemblies);
-        config.Default.AddDestinationTransform(DestinationTransform.EmptyCollectionIfNull);
-        config.Compile();
     }
     
     private void CreateMockCommand(Guid clientId, Guid foodId, Guid orderId)
