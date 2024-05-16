@@ -1,4 +1,5 @@
-﻿using Fiap.TasteEase.Application.Ports;
+﻿using System.Diagnostics.CodeAnalysis;
+using Fiap.TasteEase.Application.Ports;
 using Fiap.TasteEase.Domain.Aggregates.FoodAggregate;
 using Fiap.TasteEase.Domain.Aggregates.FoodAggregate.ValueObjects;
 using Fiap.TasteEase.Domain.Models;

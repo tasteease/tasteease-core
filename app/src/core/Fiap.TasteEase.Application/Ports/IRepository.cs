@@ -1,5 +1,5 @@
 ﻿using System.Linq.Expressions;
-using Fiap.TasteEase.Domain.Ports;
+using Fiap.TasteEase.Domain.Models;
 using FluentResults;
 
 namespace Fiap.TasteEase.Application.Ports;

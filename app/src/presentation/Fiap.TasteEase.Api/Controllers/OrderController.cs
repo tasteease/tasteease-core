@@ -1,7 +1,7 @@
+using System.Diagnostics.CodeAnalysis;
 using Fiap.TasteEase.Api.ViewModels;
 using Fiap.TasteEase.Api.ViewModels.Order;
 using Fiap.TasteEase.Application.UseCases.OrderUseCase.Create;
-using Fiap.TasteEase.Application.UseCases.OrderUseCase.Queries;
 using Fiap.TasteEase.Application.UseCases.OrderUseCase.Queries.GetAll;
 using Fiap.TasteEase.Application.UseCases.OrderUseCase.Queries.GetById;
 using Fiap.TasteEase.Application.UseCases.OrderUseCase.Queries.GetWithDescription;
@@ -19,6 +19,7 @@ namespace Fiap.TasteEase.Api.Controllers;
 [ApiController]
 [Route("[controller]")]
 [Authorize]
+[ExcludeFromCodeCoverage]
 public class OrderController : ControllerBase
 {
     private readonly ILogger<OrderController> _logger;

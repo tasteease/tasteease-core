@@ -1,10 +1,12 @@
-﻿using Fiap.TasteEase.Api.ViewModels.Order;
+﻿using System.Diagnostics.CodeAnalysis;
+using Fiap.TasteEase.Api.ViewModels.Order;
 using Fiap.TasteEase.Application.UseCases.OrderUseCase.Create;
 using Fiap.TasteEase.Application.UseCases.OrderUseCase.Queries.GetWithDescription;
 using Mapster;
 
 namespace Fiap.TasteEase.Api.Mappers;
 
+[ExcludeFromCodeCoverage]
 internal class OrderRequestMapper : IRegister
 {
     public void Register(TypeAdapterConfig config)

@@ -3,7 +3,6 @@ using Fiap.TasteEase.Application.Ports;
 using Fiap.TasteEase.Domain.Aggregates.OrderAggregate;
 using Fiap.TasteEase.Domain.Aggregates.OrderAggregate.ValueObjects;
 using Fiap.TasteEase.Domain.Models;
-using Fiap.TasteEase.Domain.Ports;
 using Fiap.TasteEase.Infra.Context;
 using FluentResults;
 using Mapster;

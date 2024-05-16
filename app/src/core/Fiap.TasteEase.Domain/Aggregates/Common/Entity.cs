@@ -1,5 +1,8 @@
-﻿namespace Fiap.TasteEase.Domain.Aggregates.Common;
+﻿using System.Diagnostics.CodeAnalysis;
 
+namespace Fiap.TasteEase.Domain.Aggregates.Common;
+
+[ExcludeFromCodeCoverage]
 public class Entity<TKey, TProps>
 {
     private List<IEntityEvent> _domainEvents;

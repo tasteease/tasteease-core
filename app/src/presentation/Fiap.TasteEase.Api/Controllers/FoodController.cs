@@ -1,4 +1,5 @@
-﻿using Fiap.TasteEase.Api.ViewModels;
+﻿using System.Diagnostics.CodeAnalysis;
+using Fiap.TasteEase.Api.ViewModels;
 using Fiap.TasteEase.Api.ViewModels.Food;
 using Fiap.TasteEase.Application.UseCases.FoodUseCase.Create;
 using Fiap.TasteEase.Application.UseCases.FoodUseCase.Delete;
@@ -17,6 +18,7 @@ namespace Fiap.TasteEase.Api.Controllers;
 [ApiController]
 [Route("[controller]")]
 [Authorize]
+[ExcludeFromCodeCoverage]
 public class FoodController : ControllerBase
 {
     private readonly ILogger<FoodController> _logger;

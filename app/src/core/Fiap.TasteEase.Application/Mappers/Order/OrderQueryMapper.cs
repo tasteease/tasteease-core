@@ -1,11 +1,13 @@
-﻿using Fiap.TasteEase.Application.UseCases.OrderUseCase.Queries.GetById;
+﻿using System.Diagnostics.CodeAnalysis;
+using Fiap.TasteEase.Application.UseCases.OrderUseCase.Queries.GetById;
 using Fiap.TasteEase.Application.UseCases.OrderUseCase.Queries.GetWithDescription;
 using Fiap.TasteEase.Domain.Aggregates.OrderAggregate.ValueObjects;
 using Mapster;
 
 namespace Fiap.TasteEase.Application.Mappers.Order;
 
-internal class OrderQueryMapper : IRegister
+[ExcludeFromCodeCoverage]
+public class OrderQueryMapper : IRegister
 {
     public void Register(TypeAdapterConfig config)
     {

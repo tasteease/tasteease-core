@@ -1,11 +1,12 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Diagnostics.CodeAnalysis;
 using Fiap.TasteEase.Domain.Aggregates.FoodAggregate.ValueObjects;
-using Fiap.TasteEase.Domain.Ports;
 
 namespace Fiap.TasteEase.Domain.Models;
 
 [Table("food", Schema = "taste_ease")]
+[ExcludeFromCodeCoverage]
 public class FoodModel : EntityModel
 {
     [Key]

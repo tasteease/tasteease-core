@@ -1,9 +1,11 @@
-﻿using Fiap.TasteEase.Domain.Aggregates.FoodAggregate.ValueObjects;
+﻿using System.Diagnostics.CodeAnalysis;
+using Fiap.TasteEase.Domain.Aggregates.FoodAggregate.ValueObjects;
 using FluentResults;
 using MediatR;
 
 namespace Fiap.TasteEase.Application.UseCases.FoodUseCase.Create;
 
+[ExcludeFromCodeCoverage]
 public class CreateFoodCommand : IRequest<Result<string>>
 {
     public string Name { get; set; }

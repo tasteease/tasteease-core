@@ -1,8 +1,10 @@
-﻿using Fiap.TasteEase.Application.Ports;
+﻿using System.Diagnostics.CodeAnalysis;
+using Fiap.TasteEase.Application.Ports;
 using Microsoft.EntityFrameworkCore.Storage;
 
 namespace Fiap.TasteEase.Infra.Context;
 
+[ExcludeFromCodeCoverage]
 internal class ApplicationDbContextAdapter : IApplicationDbContext
 {
     private readonly ApplicationDbContext _dbContext;

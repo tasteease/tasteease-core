@@ -1,4 +1,5 @@
-﻿using Amazon.CognitoIdentityProvider;
+﻿using System.Diagnostics.CodeAnalysis;
+using Amazon.CognitoIdentityProvider;
 using Amazon.Extensions.CognitoAuthentication;
 using Fiap.TasteEase.Api.ViewModels;
 using Fiap.TasteEase.Api.ViewModels.Client;
@@ -12,6 +13,7 @@ namespace Fiap.TasteEase.Api.Controllers;
 
 [ApiController]
 [Route("[controller]")]
+[ExcludeFromCodeCoverage]
 public class ClientController : ControllerBase
 {
     private readonly IAmazonCognitoIdentityProvider _identityProvider;

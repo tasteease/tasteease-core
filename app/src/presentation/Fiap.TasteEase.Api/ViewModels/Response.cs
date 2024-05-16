@@ -1,5 +1,8 @@
-﻿namespace Fiap.TasteEase.Api.ViewModels;
+﻿using System.Diagnostics.CodeAnalysis;
 
+namespace Fiap.TasteEase.Api.ViewModels;
+
+[ExcludeFromCodeCoverage]
 public class ResponseViewModel<T>
 {
     public bool Error { get; set; } = false;
