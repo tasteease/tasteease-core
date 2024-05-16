@@ -1,9 +1,8 @@
+using System.Diagnostics.CodeAnalysis;
 using Fiap.TasteEase.Api.ViewModels;
 using Fiap.TasteEase.Api.ViewModels.Order;
-using Fiap.TasteEase.Application.UseCases.OrderUseCase.Checkout;
-using Fiap.TasteEase.Application.UseCases.OrderUseCase.Checkout.Process;
 using Fiap.TasteEase.Application.UseCases.OrderUseCase.Create;
-using Fiap.TasteEase.Application.UseCases.OrderUseCase.Queries;
+using Fiap.TasteEase.Application.UseCases.OrderUseCase.Queries.GetAll;
 using Fiap.TasteEase.Application.UseCases.OrderUseCase.Queries.GetById;
 using Fiap.TasteEase.Application.UseCases.OrderUseCase.Queries.GetWithDescription;
 using Fiap.TasteEase.Application.UseCases.OrderUseCase.Update;
@@ -20,6 +19,7 @@ namespace Fiap.TasteEase.Api.Controllers;
 [ApiController]
 [Route("[controller]")]
 [Authorize]
+[ExcludeFromCodeCoverage]
 public class OrderController : ControllerBase
 {
     private readonly ILogger<OrderController> _logger;
@@ -216,82 +216,6 @@ public class OrderController : ControllerBase
         {
             return StatusCode(StatusCodes.Status500InternalServerError,
                 new ResponseViewModel<CreateOrderResponse>
-                {
-                    Error = true,
-                    ErrorMessages = new List<string> { ex.Message },
-                    Data = null!
-                }
-            );
-        }
-    }
-
-    [HttpPost("/[controller]/{orderId}/pay")]
-    [AllowAnonymous]
-    public async Task<ActionResult<ResponseViewModel<OrderPaymentResponse>>> Pay([FromRoute] Guid orderId)
-    {
-        try
-        {
-            var response = await _mediator.Send(new PayCommand { OrderId = orderId });
-
-            if (response.IsFailed)
-                return StatusCode(StatusCodes.Status400BadRequest,
-                    new ResponseViewModel<OrderPaymentResponse>
-                    {
-                        Error = true,
-                        ErrorMessages = response.Errors.Select(x => x.Message),
-                        Data = null!
-                    }
-                );
-
-            return StatusCode(StatusCodes.Status200OK,
-                new ResponseViewModel<OrderPaymentResponse>
-                {
-                    Data = response.ValueOrDefault.Adapt<OrderPaymentResponse>()
-                }
-            );
-        }
-        catch (Exception ex)
-        {
-            return StatusCode(StatusCodes.Status500InternalServerError,
-                new ResponseViewModel<OrderPaymentResponse>
-                {
-                    Error = true,
-                    ErrorMessages = new List<string> { ex.Message },
-                    Data = null!
-                }
-            );
-        }
-    }
-
-    [HttpPost("/[controller]/process_payment")]
-    public async Task<ActionResult<ResponseViewModel<string>>> UpdatePayment([FromBody] UpdatePaymentRequest request)
-    {
-        try
-        {
-            var pay = request.Adapt<ProcessPaymentCommand>();
-            var response = await _mediator.Send(pay);
-
-            if (response.IsFailed)
-                return StatusCode(StatusCodes.Status400BadRequest,
-                    new ResponseViewModel<string>
-                    {
-                        Error = true,
-                        ErrorMessages = response.Errors.Select(x => x.Message),
-                        Data = null!
-                    }
-                );
-
-            return StatusCode(StatusCodes.Status200OK,
-                new ResponseViewModel<string>
-                {
-                    Data = response.ValueOrDefault
-                }
-            );
-        }
-        catch (Exception ex)
-        {
-            return StatusCode(StatusCodes.Status500InternalServerError,
-                new ResponseViewModel<string>
                 {
                     Error = true,
                     ErrorMessages = new List<string> { ex.Message },

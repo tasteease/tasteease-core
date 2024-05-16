@@ -7,11 +7,9 @@ namespace Fiap.TasteEase.Application.UseCases.FoodUseCase.Delete;
 public class DeleteFoodHandler : IRequestHandler<DeleteFoodCommand, Result<string>>
 {
     private readonly IFoodRepository _foodRepository;
-    private readonly IMediator _mediator;
 
-    public DeleteFoodHandler(IMediator mediator, IFoodRepository foodRepository)
+    public DeleteFoodHandler(IFoodRepository foodRepository)
     {
-        _mediator = mediator;
         _foodRepository = foodRepository;
     }
 

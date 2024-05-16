@@ -1,11 +1,13 @@
-﻿using Fiap.TasteEase.Domain.Aggregates.OrderAggregate;
+﻿using System.Diagnostics.CodeAnalysis;
+using Fiap.TasteEase.Domain.Aggregates.OrderAggregate;
 using Fiap.TasteEase.Domain.Aggregates.OrderAggregate.ValueObjects;
 using Fiap.TasteEase.Domain.Models;
 using Mapster;
 
 namespace Fiap.TasteEase.Infra.Mappers;
 
-internal class OrderMapper : IRegister
+[ExcludeFromCodeCoverage]
+public class OrderMapper : IRegister
 {
     public void Register(TypeAdapterConfig config)
     {

@@ -1,11 +1,12 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Diagnostics.CodeAnalysis;
 using Fiap.TasteEase.Domain.Aggregates.OrderAggregate.ValueObjects;
-using Fiap.TasteEase.Domain.Ports;
 
 namespace Fiap.TasteEase.Domain.Models;
 
 [Table("order", Schema = "taste_ease")]
+[ExcludeFromCodeCoverage]
 public class OrderModel : EntityModel
 {
     [Key]
@@ -20,7 +21,6 @@ public class OrderModel : EntityModel
     [Column("status")] [MaxLength(128)] public OrderStatus Status { get; set; }
 
     [Column("client_id", Order = 0)]
-    [ForeignKey("client")]
     public Guid ClientId { get; set; }
 
     [Column("created_at", TypeName = "timestamp without time zone")]
@@ -30,6 +30,4 @@ public class OrderModel : EntityModel
     public DateTime UpdatedAt { get; set; }
 
     public virtual ICollection<OrderFoodModel>? Foods { get; set; } = null!;
-    public virtual ICollection<OrderPaymentModel>? Payments { get; set; } = null!;
-    public virtual ClientModel Client { get; set; } = null!;
 }

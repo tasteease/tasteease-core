@@ -7,12 +7,10 @@ namespace Fiap.TasteEase.Application.UseCases.OrderUseCase.Queries.GetById;
 
 public class GetOrderByIdHandler : IRequestHandler<GetOrderByIdQuery, Result<OrderResponseQuery>>
 {
-    private readonly IMediator _mediator;
     private readonly IOrderRepository _orderRepository;
 
-    public GetOrderByIdHandler(IMediator mediator, IOrderRepository orderRepository)
+    public GetOrderByIdHandler(IOrderRepository orderRepository)
     {
-        _mediator = mediator;
         _orderRepository = orderRepository;
     }
 

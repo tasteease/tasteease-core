@@ -1,7 +1,9 @@
-﻿using Fiap.TasteEase.Domain.Aggregates.FoodAggregate.ValueObjects;
+﻿using System.Diagnostics.CodeAnalysis;
+using Fiap.TasteEase.Domain.Aggregates.FoodAggregate.ValueObjects;
 
 namespace Fiap.TasteEase.Api.ViewModels.Food;
 
+[ExcludeFromCodeCoverage]
 public class CreateFoodRequest
 {
     public string Name { get; set; }
@@ -10,6 +12,7 @@ public class CreateFoodRequest
     public FoodType Type { get; set; }
 }
 
+[ExcludeFromCodeCoverage]
 public class UpdateFoodRequest
 {
     public Guid Id { get; set; }
@@ -19,6 +22,7 @@ public class UpdateFoodRequest
     public FoodType Type { get; set; }
 }
 
+[ExcludeFromCodeCoverage]
 public class DeleteFoodRequest
 {
     public Guid Id { get; set; }

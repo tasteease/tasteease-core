@@ -4,16 +4,14 @@ using FluentResults;
 using Mapster;
 using MediatR;
 
-namespace Fiap.TasteEase.Application.UseCases.OrderUseCase.Queries;
+namespace Fiap.TasteEase.Application.UseCases.OrderUseCase.Queries.GetAll;
 
-public class GetlOrderAllHandler : IRequestHandler<GetOrderAllQuery, Result<IEnumerable<OrderResponseQuery>>>
+public class GetOrderAllHandler : IRequestHandler<GetOrderAllQuery, Result<IEnumerable<OrderResponseQuery>>>
 {
-    private readonly IMediator _mediator;
     private readonly IOrderRepository _orderRepository;
 
-    public GetlOrderAllHandler(IMediator mediator, IOrderRepository orderRepository)
+    public GetOrderAllHandler(IOrderRepository orderRepository)
     {
-        _mediator = mediator;
         _orderRepository = orderRepository;
     }
 

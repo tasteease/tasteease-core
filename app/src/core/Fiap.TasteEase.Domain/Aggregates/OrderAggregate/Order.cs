@@ -1,6 +1,4 @@
-﻿using Fiap.TasteEase.Domain.Aggregates.ClientAggregate;
-using Fiap.TasteEase.Domain.Aggregates.ClientAggregate.ValueObjects;
-using Fiap.TasteEase.Domain.Aggregates.Common;
+﻿using Fiap.TasteEase.Domain.Aggregates.Common;
 using Fiap.TasteEase.Domain.Aggregates.FoodAggregate;
 using Fiap.TasteEase.Domain.Aggregates.FoodAggregate.ValueObjects;
 using Fiap.TasteEase.Domain.Aggregates.OrderAggregate.ValueObjects;
@@ -21,8 +19,6 @@ public class Order : Entity<OrderId, OrderProps>, IOrderAggregate
     public DateTime CreatedAt => Props.CreatedAt;
     public DateTime UpdatedAt => Props.UpdatedAt;
     public IReadOnlyList<OrderFood> Foods => Props.Foods;
-    public IReadOnlyList<OrderPayment> Payments => Props.Payments;
-    public Client Client => Props.Client;
 
     public static Result<Order> Create(CreateOrderProps props)
     {
@@ -69,34 +65,6 @@ public class Order : Entity<OrderId, OrderProps>, IOrderAggregate
                     }
                 ).ToList();
 
-        List<OrderPayment>? payments = null;
-        if (model.Payments?.Any() ?? false)
-            payments = model.Payments
-                .Select(s =>
-                    new OrderPayment
-                    {
-                        Id = s.Id,
-                        Amount = s.Amount,
-                        CreatedAt = s.CreatedAt,
-                        Paid = s.Paid,
-                        PaidDate = s.PaidDate,
-                        PaymentLink = s.PaymentLink,
-                        Reference = s.Reference
-                    }
-                ).ToList();
-
-        Client? client = null;
-        if (model.Client is not null)
-            client = Client.Rehydrate(
-                new ClientProps(
-                    model.Client.Name,
-                    model.Client.TaxpayerNumber,
-                    model.Client.CreatedAt,
-                    model.Client.UpdatedAt
-                ),
-                new ClientId(model.Client.Id)
-            ).ValueOrDefault;
-
         var order = new Order(
             new OrderProps(
                 model.Description,
@@ -104,9 +72,7 @@ public class Order : Entity<OrderId, OrderProps>, IOrderAggregate
                 model.ClientId,
                 model.CreatedAt,
                 model.UpdatedAt,
-                client,
-                foods,
-                payments
+                foods
             ),
             new OrderId(model.Id)
         );
@@ -153,41 +119,41 @@ public class Order : Entity<OrderId, OrderProps>, IOrderAggregate
         return Result.Ok(this);
     }
 
-    public Result<OrderPayment> Pay()
-    {
-        var payment = new OrderPayment
-        {
-            Amount = GetTotalPrice(Props.Foods.Select(s => s.Food).ToList()).ValueOrDefault,
-            CreatedAt = DateTime.UtcNow,
-            Paid = false,
-            PaymentLink = "https://pay-me.com",
-            Reference = $"ORDER_ID-{Id.Value}"
-        };
-
-        var paymentProps = new List<OrderPayment>((Props.Payments?.Count ?? 0) + 1);
-        paymentProps.AddRange(Props?.Payments ?? Enumerable.Empty<OrderPayment>());
-        paymentProps.Add(payment);
-
-        Props = Props with
-        {
-            Payments = paymentProps
-        };
-
-        return Result.Ok(payment);
-    }
-
-    public Result<Order> ProcessPayment(string reference, bool paid, DateTime? paidDate)
-    {
-        var payment = Props.Payments.FirstOrDefault(f => f.Reference == reference);
-
-        if (payment is null)
-            Result.Fail("pagamento não encontrado");
-
-        payment.Paid = paid;
-        payment.PaidDate = paidDate;
-
-        return Result.Ok(this);
-    }
+    // public Result<OrderPayment> Pay()
+    // {
+    //     var payment = new OrderPayment
+    //     {
+    //         Amount = GetTotalPrice(Props.Foods.Select(s => s.Food).ToList()).ValueOrDefault,
+    //         CreatedAt = DateTime.UtcNow,
+    //         Paid = false,
+    //         PaymentLink = "https://pay-me.com",
+    //         Reference = $"ORDER_ID-{Id.Value}"
+    //     };
+    //
+    //     var paymentProps = new List<OrderPayment>((Props.Payments?.Count ?? 0) + 1);
+    //     paymentProps.AddRange(Props?.Payments ?? Enumerable.Empty<OrderPayment>());
+    //     paymentProps.Add(payment);
+    //
+    //     Props = Props with
+    //     {
+    //         Payments = paymentProps
+    //     };
+    //
+    //     return Result.Ok(payment);
+    // }
+    //
+    // public Result<Order> ProcessPayment(string reference, bool paid, DateTime? paidDate)
+    // {
+    //     var payment = Props.Payments.FirstOrDefault(f => f.Reference == reference);
+    //
+    //     if (payment is null)
+    //         Result.Fail("pagamento não encontrado");
+    //
+    //     payment.Paid = paid;
+    //     payment.PaidDate = paidDate;
+    //
+    //     return Result.Ok(this);
+    // }
 }
 
 public record OrderProps(
@@ -196,9 +162,7 @@ public record OrderProps(
     Guid ClientId,
     DateTime CreatedAt,
     DateTime UpdatedAt,
-    Client Client = null,
-    List<OrderFood>? Foods = null,
-    List<OrderPayment>? Payments = null
+    List<OrderFood>? Foods = null
 );
 
 public record CreateOrderProps(

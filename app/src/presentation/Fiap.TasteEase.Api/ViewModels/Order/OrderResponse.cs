@@ -1,8 +1,10 @@
-﻿using Fiap.TasteEase.Domain.Aggregates.FoodAggregate.ValueObjects;
+﻿using System.Diagnostics.CodeAnalysis;
+using Fiap.TasteEase.Domain.Aggregates.FoodAggregate.ValueObjects;
 using Fiap.TasteEase.Domain.Aggregates.OrderAggregate.ValueObjects;
 
 namespace Fiap.TasteEase.Api.ViewModels.Order;
 
+[ExcludeFromCodeCoverage]
 public record OrderResponse(
     Guid Id,
     string Description,
@@ -14,6 +16,7 @@ public record OrderResponse(
     IEnumerable<OrderFoodResponse>? Foods
 );
 
+[ExcludeFromCodeCoverage]
 public record OrderFoodResponse(
     Guid FoodId,
     string FoodName,
@@ -24,6 +27,7 @@ public record OrderFoodResponse(
     DateTime CreatedAt
 );
 
+[ExcludeFromCodeCoverage]
 public record OrderWithDescriptionResponse(
     Guid Id,
     string Description,

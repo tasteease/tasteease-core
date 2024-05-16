@@ -1,7 +1,9 @@
-﻿using System.Reflection;
+﻿using System.Diagnostics.CodeAnalysis;
+using System.Reflection;
 
 namespace Fiap.TasteEase.Domain.Aggregates.Common;
 
+[ExcludeFromCodeCoverage]
 public abstract class Enumeration : IComparable
 {
     protected Enumeration(int id, string name)

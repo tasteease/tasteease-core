@@ -3,7 +3,6 @@ using Fiap.TasteEase.Application.Ports;
 using Fiap.TasteEase.Domain.Aggregates.OrderAggregate;
 using Fiap.TasteEase.Domain.Aggregates.OrderAggregate.ValueObjects;
 using Fiap.TasteEase.Domain.Models;
-using Fiap.TasteEase.Domain.Ports;
 using Fiap.TasteEase.Infra.Context;
 using FluentResults;
 using Mapster;
@@ -32,7 +31,6 @@ public class OrderRepository
     public async Task<Result<IEnumerable<Order>>> GetByFilters(List<OrderStatus> status, Guid? clientId)
     {
         var query = DbSet.AsNoTracking()
-            .Include(i => i.Client)
             .Include(i => i.Foods)
             .ThenInclude(i => i.Food)
             .Where(w => true);
@@ -49,7 +47,6 @@ public class OrderRepository
     public async Task<Result<IEnumerable<Order>>> GetWithDescription()
     {
         var query = DbSet.AsNoTracking()
-            .Include(i => i.Client)
             .Include(i => i.Foods)
             .ThenInclude(i => i.Food)
             .Where(w => w.Status != OrderStatus.Finished
@@ -69,28 +66,15 @@ public class OrderRepository
     public override async Task<Result<Order>> GetById(Guid id)
     {
         var query = await DbSet.AsNoTracking()
-            .Include(i => i.Client)
             .Include(i => i.Foods)
             .ThenInclude(i => i.Food)
             .FirstOrDefaultAsync(f => f.Id == id);
         return query is null ? Result.Fail("não foi encontrado") : Result.Ok(Order.Rehydrate(query).ValueOrDefault);
     }
 
-    public async Task<Result<Order>> GetByPaymentReference(string reference)
-    {
-        var query = await DbSet.AsNoTracking()
-            .Include(i => i.Payments)
-            .Include(i => i.Client)
-            .Include(i => i.Foods)
-            .ThenInclude(i => i.Food)
-            .FirstOrDefaultAsync(f => f.Payments.FirstOrDefault(f => f.Reference == reference) != null);
-        return query is null ? Result.Fail("não foi encontrado") : Result.Ok(Order.Rehydrate(query).ValueOrDefault);
-    }
-
     public override Result<bool> Update(Order aggregate)
     {
         var result = aggregate.Adapt<OrderModel>();
-        result.Client = null;
         foreach (var orderFoodModel in result.Foods) orderFoodModel.Food = null;
         DbSet.Update(result);
         return Result.Ok(true);

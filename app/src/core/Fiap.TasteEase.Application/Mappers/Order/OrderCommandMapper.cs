@@ -1,11 +1,13 @@
-﻿using Fiap.TasteEase.Application.UseCases.OrderUseCase.Create;
+﻿using System.Diagnostics.CodeAnalysis;
+using Fiap.TasteEase.Application.UseCases.OrderUseCase.Create;
 using Fiap.TasteEase.Domain.Aggregates.OrderAggregate;
 using Fiap.TasteEase.Domain.Aggregates.OrderAggregate.ValueObjects;
 using Mapster;
 
 namespace Fiap.TasteEase.Application.Mappers.Order;
 
-internal class OrderCommandMapper : IRegister
+[ExcludeFromCodeCoverage]
+public class OrderCommandMapper : IRegister
 {
     public void Register(TypeAdapterConfig config)
     {

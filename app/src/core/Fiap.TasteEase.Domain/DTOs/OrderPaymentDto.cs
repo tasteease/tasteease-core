@@ -1,8 +1,13 @@
-﻿namespace Fiap.TasteEase.Domain.Aggregates.OrderAggregate.ValueObjects;
+﻿using System.Diagnostics.CodeAnalysis;
 
-public class OrderPayment
+namespace Fiap.TasteEase.Domain.DTOs;
+
+[ExcludeFromCodeCoverage]
+public class OrderPaymentDto
 {
     public Guid Id { get; set; }
+
+    public Guid OrderId { get; set; }
     public decimal Amount { get; set; }
     public bool Paid { get; set; }
     public string Reference { get; set; }

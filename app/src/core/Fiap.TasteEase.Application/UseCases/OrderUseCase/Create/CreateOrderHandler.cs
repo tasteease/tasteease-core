@@ -10,12 +10,10 @@ namespace Fiap.TasteEase.Application.UseCases.OrderUseCase.Create;
 public class CreateOrderHandler : IRequestHandler<CreateOrderCommand, Result<OrderResponseCommand>>
 {
     private readonly IFoodRepository _foodRepository;
-    private readonly IMediator _mediator;
     private readonly IOrderRepository _orderRepository;
 
-    public CreateOrderHandler(IMediator mediator, IOrderRepository orderRepository, IFoodRepository foodRepository)
+    public CreateOrderHandler(IOrderRepository orderRepository, IFoodRepository foodRepository)
     {
-        _mediator = mediator;
         _orderRepository = orderRepository;
         _foodRepository = foodRepository;
     }

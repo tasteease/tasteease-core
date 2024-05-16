@@ -1,9 +1,11 @@
-﻿using Fiap.TasteEase.Application.UseCases.FoodUseCase.Queries.GetById;
+﻿using System.Diagnostics.CodeAnalysis;
+using Fiap.TasteEase.Application.UseCases.FoodUseCase.Queries.GetById;
 using Mapster;
 
 namespace Fiap.TasteEase.Application.Mappers.Food;
 
-internal class FoodQueryMapper : IRegister
+[ExcludeFromCodeCoverage]
+public class FoodQueryMapper : IRegister
 {
     public void Register(TypeAdapterConfig config)
     {

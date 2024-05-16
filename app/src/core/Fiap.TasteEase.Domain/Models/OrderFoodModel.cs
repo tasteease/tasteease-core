@@ -1,10 +1,11 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using Fiap.TasteEase.Domain.Ports;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Fiap.TasteEase.Domain.Models;
 
 [Table("order_food", Schema = "taste_ease")]
+[ExcludeFromCodeCoverage]
 public class OrderFoodModel : EntityModel
 {
     [Key]

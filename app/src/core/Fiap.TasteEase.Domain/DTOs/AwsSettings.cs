@@ -1,5 +1,8 @@
-﻿namespace Fiap.TasteEase.Domain.DTOs;
+﻿using System.Diagnostics.CodeAnalysis;
 
+namespace Fiap.TasteEase.Domain.DTOs;
+
+[ExcludeFromCodeCoverage]
 public class AwsSettings
 {
     public string Region { get; set; }

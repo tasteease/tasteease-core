@@ -1,7 +1,9 @@
-﻿using Fiap.TasteEase.Domain.Aggregates.FoodAggregate;
+﻿using System.Diagnostics.CodeAnalysis;
+using Fiap.TasteEase.Domain.Aggregates.FoodAggregate;
 
 namespace Fiap.TasteEase.Domain.Aggregates.OrderAggregate.ValueObjects;
 
+[ExcludeFromCodeCoverage]
 public class OrderFood
 {
     public Guid Id { get; set; }

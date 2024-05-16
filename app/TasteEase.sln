@@ -5,7 +5,7 @@ VisualStudioVersion = 17.7.34003.232
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{F5D343D7-5AA4-42A2-9E2D-0772D91B35DB}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fiap.TasteEase.Domain.Tests", "tests\Fiap.TasteEase.Domain.Tests\Fiap.TasteEase.Domain.Tests.csproj", "{C60DD8FB-6CDA-4C2D-BA83-A6CE67977C13}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fiap.TasteEase.Application.Tests", "tests\Fiap.TasteEase.Application.Tests\Fiap.TasteEase.Application.Tests.csproj", "{C60DD8FB-6CDA-4C2D-BA83-A6CE67977C13}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{27C76047-E78C-4B8B-B036-CE80A4A841F7}"
 EndProject

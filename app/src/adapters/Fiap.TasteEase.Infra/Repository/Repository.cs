@@ -1,7 +1,7 @@
 ﻿using System.Linq.Expressions;
 using Fiap.TasteEase.Application.Ports;
 using Fiap.TasteEase.Domain.Aggregates.Common;
-using Fiap.TasteEase.Domain.Ports;
+using Fiap.TasteEase.Domain.Models;
 using Fiap.TasteEase.Infra.Context;
 using FluentResults;
 using Mapster;

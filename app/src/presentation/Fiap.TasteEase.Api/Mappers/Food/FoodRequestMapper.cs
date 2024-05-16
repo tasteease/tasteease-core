@@ -1,4 +1,5 @@
-﻿using Fiap.TasteEase.Api.ViewModels.Food;
+﻿using System.Diagnostics.CodeAnalysis;
+using Fiap.TasteEase.Api.ViewModels.Food;
 using Fiap.TasteEase.Application.UseCases.FoodUseCase.Create;
 using Fiap.TasteEase.Application.UseCases.FoodUseCase.Delete;
 using Fiap.TasteEase.Application.UseCases.FoodUseCase.Update;
@@ -6,6 +7,7 @@ using Mapster;
 
 namespace Fiap.TasteEase.Api.Mappers.Food;
 
+[ExcludeFromCodeCoverage]
 public class CreateFoodRequestMapper : IRegister
 {
     public void Register(TypeAdapterConfig config)
@@ -18,6 +20,7 @@ public class CreateFoodRequestMapper : IRegister
     }
 }
 
+[ExcludeFromCodeCoverage]
 public class UpdateFoodRequestMapper : IRegister
 {
     public void Register(TypeAdapterConfig config)
@@ -31,6 +34,7 @@ public class UpdateFoodRequestMapper : IRegister
     }
 }
 
+[ExcludeFromCodeCoverage]
 public class DeleteFoodRequestMapper : IRegister
 {
     public void Register(TypeAdapterConfig config)

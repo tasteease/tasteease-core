@@ -1,9 +1,11 @@
-﻿using Fiap.TasteEase.Domain.Aggregates.FoodAggregate;
+﻿using System.Diagnostics.CodeAnalysis;
+using Fiap.TasteEase.Domain.Aggregates.FoodAggregate;
 using Fiap.TasteEase.Domain.Models;
 using Mapster;
 
 namespace Fiap.TasteEase.Infra.Mappers;
 
+[ExcludeFromCodeCoverage]
 internal class FoodMapper : IRegister
 {
     public void Register(TypeAdapterConfig config)

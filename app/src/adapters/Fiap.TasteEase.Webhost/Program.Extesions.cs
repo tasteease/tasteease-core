@@ -1,9 +1,11 @@
-﻿using System.Reflection;
+﻿using System.Diagnostics.CodeAnalysis;
+using System.Reflection;
 using Fiap.TasteEase.Domain.DTOs;
 using Mapster;
 
 namespace Fiap.TasteEase.Webhost;
 
+[ExcludeFromCodeCoverage]
 public static class Program
 {
     public static IServiceCollection AddMapsterConfiguration(this IServiceCollection services)
