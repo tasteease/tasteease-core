@@ -1,7 +1,9 @@
-﻿using System.Text;
+﻿using System.Diagnostics.CodeAnalysis;
+using System.Text;
 
 namespace Fiap.TasteEase.Application.Helpers;
 
+[ExcludeFromCodeCoverage]
 public static class CognitoHash
 {
     public static string GetSecretHash(string username, string appClientId, string appSecretKey)

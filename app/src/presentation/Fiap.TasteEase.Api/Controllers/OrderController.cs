@@ -2,6 +2,7 @@ using Fiap.TasteEase.Api.ViewModels;
 using Fiap.TasteEase.Api.ViewModels.Order;
 using Fiap.TasteEase.Application.UseCases.OrderUseCase.Create;
 using Fiap.TasteEase.Application.UseCases.OrderUseCase.Queries;
+using Fiap.TasteEase.Application.UseCases.OrderUseCase.Queries.GetAll;
 using Fiap.TasteEase.Application.UseCases.OrderUseCase.Queries.GetById;
 using Fiap.TasteEase.Application.UseCases.OrderUseCase.Queries.GetWithDescription;
 using Fiap.TasteEase.Application.UseCases.OrderUseCase.Update;

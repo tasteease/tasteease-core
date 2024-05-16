@@ -3,6 +3,7 @@ using Fiap.TasteEase.Application.Tests.Order.Fixture;
 using Fiap.TasteEase.Application.UseCases.OrderUseCase.Create;
 using Fiap.TasteEase.Application.UseCases.OrderUseCase.Queries.GetAll;
 using Fiap.TasteEase.Application.UseCases.OrderUseCase.Queries.GetById;
+using Fiap.TasteEase.Application.UseCases.OrderUseCase.Queries.GetWithDescription;
 using Fiap.TasteEase.Application.UseCases.OrderUseCase.Update;
 using FluentResults;
 using Moq;
@@ -51,6 +52,25 @@ public class QueryOrderUseCases : IClassFixture<OrderFixture>
         
         // Act
         var handler = new GetOrderByIdHandler(_orderRepository.Object);
+        var result = await handler.Handle(command, cancellationToken);
+
+        // Assert
+        Assert.True(result.IsSuccess);
+    }
+    
+    [Fact]
+    public async Task GetWithDescription()
+    {
+        // Arrange 
+        var command = _fixture.MockGetWithDescriptionQueryQuery;
+        var cancellationToken = new CancellationToken();
+
+        _orderRepository
+            .Setup(m => m.GetWithDescription())
+            .Returns(Task.Run(() => Result.Ok(_fixture.MockOrderList)));
+        
+        // Act
+        var handler = new GetOrderWithDescriptionHandler(_orderRepository.Object);
         var result = await handler.Handle(command, cancellationToken);
 
         // Assert

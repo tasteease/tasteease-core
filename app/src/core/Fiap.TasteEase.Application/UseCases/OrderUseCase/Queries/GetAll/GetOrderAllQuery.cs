@@ -3,7 +3,7 @@ using Fiap.TasteEase.Domain.Aggregates.OrderAggregate.ValueObjects;
 using FluentResults;
 using MediatR;
 
-namespace Fiap.TasteEase.Application.UseCases.OrderUseCase.Queries;
+namespace Fiap.TasteEase.Application.UseCases.OrderUseCase.Queries.GetAll;
 
 public class GetOrderAllQuery : IRequest<Result<IEnumerable<OrderResponseQuery>>>
 {

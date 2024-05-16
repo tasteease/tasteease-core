@@ -7,12 +7,10 @@ namespace Fiap.TasteEase.Application.UseCases.OrderUseCase.Queries.GetWithDescri
 {
     public class GetOrderWithDescriptionHandler : IRequestHandler<GetOrderWithDescriptionQuery, Result<IEnumerable<OrderWithDescriptionQuery>>>
     {
-        private readonly IMediator _mediator;
         private readonly IOrderRepository _orderRepository;
 
-        public GetOrderWithDescriptionHandler(IMediator mediator, IOrderRepository orderRepository)
+        public GetOrderWithDescriptionHandler(IOrderRepository orderRepository)
         {
-            _mediator = mediator;
             _orderRepository = orderRepository;
         }
 

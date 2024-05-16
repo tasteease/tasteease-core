@@ -1,7 +1,9 @@
 ﻿using System.Reflection;
 using Fiap.TasteEase.Application.UseCases.OrderUseCase.Create;
 using Fiap.TasteEase.Application.UseCases.OrderUseCase.Queries;
+using Fiap.TasteEase.Application.UseCases.OrderUseCase.Queries.GetAll;
 using Fiap.TasteEase.Application.UseCases.OrderUseCase.Queries.GetById;
+using Fiap.TasteEase.Application.UseCases.OrderUseCase.Queries.GetWithDescription;
 using Fiap.TasteEase.Application.UseCases.OrderUseCase.Update;
 using Fiap.TasteEase.Domain.Aggregates.FoodAggregate.ValueObjects;
 using Fiap.TasteEase.Domain.Aggregates.OrderAggregate;
@@ -17,6 +19,7 @@ public class OrderFixture
     public UpdateOrderCommand MockUpdateFailCommand;
     public GetOrderAllQuery MockGetlAllQuery;
     public GetOrderByIdQuery MockGetByIdQuery;
+    public GetOrderWithDescriptionQuery MockGetWithDescriptionQueryQuery;
     public Domain.Aggregates.FoodAggregate.Food MockFood;
     public Domain.Aggregates.OrderAggregate.Order MockOrder;
     public OrderFood MockOrderFood;
@@ -86,6 +89,8 @@ public class OrderFixture
         {
             OrderId = orderId
         };
+        
+        MockGetWithDescriptionQueryQuery = new GetOrderWithDescriptionQuery();
     }
     
     private void CreateOrderFood(Guid orderFoodId, Guid foodId)
