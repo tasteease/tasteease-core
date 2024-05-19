@@ -17,7 +17,7 @@ namespace Fiap.TasteEase.Api.Controllers;
 
 [ApiController]
 [Route("[controller]")]
-[Authorize]
+// [Authorize]
 [ExcludeFromCodeCoverage]
 public class FoodController : ControllerBase
 {
