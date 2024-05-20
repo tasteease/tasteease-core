@@ -1,0 +1,1607 @@
+﻿{
+  "DotCoverVersion": "2024.1.2",
+  "Kind": "SolutionRoot",
+  "CoveredStatements": 410,
+  "TotalStatements": 453,
+  "CoveragePercent": 91,
+  "Children": [
+    {
+      "Kind": "SolutionFolder",
+      "Name": "src",
+      "CoveredStatements": 198,
+      "TotalStatements": 241,
+      "CoveragePercent": 82,
+      "Children": [
+        {
+          "Kind": "SolutionFolder",
+          "Name": "core",
+          "CoveredStatements": 198,
+          "TotalStatements": 241,
+          "CoveragePercent": 82,
+          "Children": [
+            {
+              "Kind": "Project",
+              "Name": "Fiap.TasteEase.Application",
+              "CoveredStatements": 132,
+              "TotalStatements": 144,
+              "CoveragePercent": 92,
+              "Children": [
+                {
+                  "Kind": "Namespace",
+                  "Name": "Fiap.TasteEase.Application.UseCases",
+                  "CoveredStatements": 132,
+                  "TotalStatements": 144,
+                  "CoveragePercent": 92,
+                  "Children": [
+                    {
+                      "Kind": "Namespace",
+                      "Name": "FoodUseCase",
+                      "CoveredStatements": 57,
+                      "TotalStatements": 63,
+                      "CoveragePercent": 90,
+                      "Children": [
+                        {
+                          "Kind": "Namespace",
+                          "Name": "Create",
+                          "CoveredStatements": 11,
+                          "TotalStatements": 12,
+                          "CoveragePercent": 92,
+                          "Children": [
+                            {
+                              "Kind": "Type",
+                              "Name": "CreateFoodHandler",
+                              "CoveredStatements": 11,
+                              "TotalStatements": 12,
+                              "CoveragePercent": 92,
+                              "Children": [
+                                {
+                                  "Kind": "Constructor",
+                                  "Name": "CreateFoodHandler(IFoodRepository)",
+                                  "CoveredStatements": 4,
+                                  "TotalStatements": 4,
+                                  "CoveragePercent": 100
+                                },
+                                {
+                                  "Kind": "Method",
+                                  "Name": "Handle(CreateFoodCommand,CancellationToken):Task<Result<string>>",
+                                  "CoveredStatements": 7,
+                                  "TotalStatements": 8,
+                                  "CoveragePercent": 88,
+                                  "Children": [
+                                    {
+                                      "Kind": "InternalCompiledMethod",
+                                      "Name": "MoveNext():void",
+                                      "CoveredStatements": 7,
+                                      "TotalStatements": 8,
+                                      "CoveragePercent": 88
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "Kind": "Namespace",
+                          "Name": "Delete",
+                          "CoveredStatements": 11,
+                          "TotalStatements": 12,
+                          "CoveragePercent": 92,
+                          "Children": [
+                            {
+                              "Kind": "Type",
+                              "Name": "DeleteFoodHandler",
+                              "CoveredStatements": 11,
+                              "TotalStatements": 12,
+                              "CoveragePercent": 92,
+                              "Children": [
+                                {
+                                  "Kind": "Constructor",
+                                  "Name": "DeleteFoodHandler(IFoodRepository)",
+                                  "CoveredStatements": 4,
+                                  "TotalStatements": 4,
+                                  "CoveragePercent": 100
+                                },
+                                {
+                                  "Kind": "Method",
+                                  "Name": "Handle(DeleteFoodCommand,CancellationToken):Task<Result<string>>",
+                                  "CoveredStatements": 7,
+                                  "TotalStatements": 8,
+                                  "CoveragePercent": 88,
+                                  "Children": [
+                                    {
+                                      "Kind": "InternalCompiledMethod",
+                                      "Name": "MoveNext():void",
+                                      "CoveredStatements": 7,
+                                      "TotalStatements": 8,
+                                      "CoveragePercent": 88
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "Kind": "Namespace",
+                          "Name": "Queries",
+                          "CoveredStatements": 22,
+                          "TotalStatements": 24,
+                          "CoveragePercent": 92,
+                          "Children": [
+                            {
+                              "Kind": "Namespace",
+                              "Name": "GetAll",
+                              "CoveredStatements": 11,
+                              "TotalStatements": 12,
+                              "CoveragePercent": 92,
+                              "Children": [
+                                {
+                                  "Kind": "Type",
+                                  "Name": "GetFoodAllHandler",
+                                  "CoveredStatements": 11,
+                                  "TotalStatements": 12,
+                                  "CoveragePercent": 92,
+                                  "Children": [
+                                    {
+                                      "Kind": "Constructor",
+                                      "Name": "GetFoodAllHandler(IFoodRepository)",
+                                      "CoveredStatements": 4,
+                                      "TotalStatements": 4,
+                                      "CoveragePercent": 100
+                                    },
+                                    {
+                                      "Kind": "Method",
+                                      "Name": "Handle(GetFoodAllQuery,CancellationToken):Task<Result<IEnumerable<FoodResponseDto>>>",
+                                      "CoveredStatements": 7,
+                                      "TotalStatements": 8,
+                                      "CoveragePercent": 88,
+                                      "Children": [
+                                        {
+                                          "Kind": "InternalCompiledMethod",
+                                          "Name": "MoveNext():void",
+                                          "CoveredStatements": 7,
+                                          "TotalStatements": 8,
+                                          "CoveragePercent": 88
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "Kind": "Namespace",
+                              "Name": "GetById",
+                              "CoveredStatements": 11,
+                              "TotalStatements": 12,
+                              "CoveragePercent": 92,
+                              "Children": [
+                                {
+                                  "Kind": "Type",
+                                  "Name": "GetFoodByIdHandler",
+                                  "CoveredStatements": 11,
+                                  "TotalStatements": 12,
+                                  "CoveragePercent": 92,
+                                  "Children": [
+                                    {
+                                      "Kind": "Constructor",
+                                      "Name": "GetFoodByIdHandler(IFoodRepository)",
+                                      "CoveredStatements": 4,
+                                      "TotalStatements": 4,
+                                      "CoveragePercent": 100
+                                    },
+                                    {
+                                      "Kind": "Method",
+                                      "Name": "Handle(GetFoodByIdQuery,CancellationToken):Task<Result<FoodResponseDto>>",
+                                      "CoveredStatements": 7,
+                                      "TotalStatements": 8,
+                                      "CoveragePercent": 88,
+                                      "Children": [
+                                        {
+                                          "Kind": "InternalCompiledMethod",
+                                          "Name": "MoveNext():void",
+                                          "CoveredStatements": 7,
+                                          "TotalStatements": 8,
+                                          "CoveragePercent": 88
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "Kind": "Namespace",
+                          "Name": "Update",
+                          "CoveredStatements": 13,
+                          "TotalStatements": 15,
+                          "CoveragePercent": 87,
+                          "Children": [
+                            {
+                              "Kind": "Type",
+                              "Name": "UpdateFoodHandler",
+                              "CoveredStatements": 13,
+                              "TotalStatements": 15,
+                              "CoveragePercent": 87,
+                              "Children": [
+                                {
+                                  "Kind": "Constructor",
+                                  "Name": "UpdateFoodHandler(IFoodRepository)",
+                                  "CoveredStatements": 4,
+                                  "TotalStatements": 4,
+                                  "CoveragePercent": 100
+                                },
+                                {
+                                  "Kind": "Method",
+                                  "Name": "Handle(UpdateFoodCommand,CancellationToken):Task<Result<string>>",
+                                  "CoveredStatements": 9,
+                                  "TotalStatements": 11,
+                                  "CoveragePercent": 82,
+                                  "Children": [
+                                    {
+                                      "Kind": "InternalCompiledMethod",
+                                      "Name": "MoveNext():void",
+                                      "CoveredStatements": 9,
+                                      "TotalStatements": 11,
+                                      "CoveragePercent": 82
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "Kind": "Namespace",
+                      "Name": "OrderUseCase",
+                      "CoveredStatements": 75,
+                      "TotalStatements": 81,
+                      "CoveragePercent": 93,
+                      "Children": [
+                        {
+                          "Kind": "Namespace",
+                          "Name": "Create",
+                          "CoveredStatements": 24,
+                          "TotalStatements": 26,
+                          "CoveragePercent": 92,
+                          "Children": [
+                            {
+                              "Kind": "Type",
+                              "Name": "CreateOrderHandler",
+                              "CoveredStatements": 24,
+                              "TotalStatements": 26,
+                              "CoveragePercent": 92,
+                              "Children": [
+                                {
+                                  "Kind": "Constructor",
+                                  "Name": "CreateOrderHandler(IOrderRepository,IFoodRepository)",
+                                  "CoveredStatements": 5,
+                                  "TotalStatements": 5,
+                                  "CoveragePercent": 100
+                                },
+                                {
+                                  "Kind": "Method",
+                                  "Name": "Handle(CreateOrderCommand,CancellationToken):Task<Result<OrderResponseCommand>>",
+                                  "CoveredStatements": 19,
+                                  "TotalStatements": 21,
+                                  "CoveragePercent": 90,
+                                  "Children": [
+                                    {
+                                      "Kind": "InternalCompiledMethod",
+                                      "Name": "MoveNext():void",
+                                      "CoveredStatements": 19,
+                                      "TotalStatements": 21,
+                                      "CoveragePercent": 90,
+                                      "Children": [
+                                        {
+                                          "Kind": "OwnCoverage",
+                                          "CoveredStatements": 18,
+                                          "TotalStatements": 20,
+                                          "CoveragePercent": 90
+                                        },
+                                        {
+                                          "Kind": "AnonymousMethod",
+                                          "Name": "(OrderFood):Guid",
+                                          "CoveredStatements": 1,
+                                          "TotalStatements": 1,
+                                          "CoveragePercent": 100
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "Kind": "Namespace",
+                          "Name": "Queries",
+                          "CoveredStatements": 33,
+                          "TotalStatements": 36,
+                          "CoveragePercent": 92,
+                          "Children": [
+                            {
+                              "Kind": "Namespace",
+                              "Name": "GetAll",
+                              "CoveredStatements": 11,
+                              "TotalStatements": 12,
+                              "CoveragePercent": 92,
+                              "Children": [
+                                {
+                                  "Kind": "Type",
+                                  "Name": "GetOrderAllHandler",
+                                  "CoveredStatements": 11,
+                                  "TotalStatements": 12,
+                                  "CoveragePercent": 92,
+                                  "Children": [
+                                    {
+                                      "Kind": "Constructor",
+                                      "Name": "GetOrderAllHandler(IOrderRepository)",
+                                      "CoveredStatements": 4,
+                                      "TotalStatements": 4,
+                                      "CoveragePercent": 100
+                                    },
+                                    {
+                                      "Kind": "Method",
+                                      "Name": "Handle(GetOrderAllQuery,CancellationToken):Task<Result<IEnumerable<OrderResponseQuery>>>",
+                                      "CoveredStatements": 7,
+                                      "TotalStatements": 8,
+                                      "CoveragePercent": 88,
+                                      "Children": [
+                                        {
+                                          "Kind": "InternalCompiledMethod",
+                                          "Name": "MoveNext():void",
+                                          "CoveredStatements": 7,
+                                          "TotalStatements": 8,
+                                          "CoveragePercent": 88
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "Kind": "Namespace",
+                              "Name": "GetById",
+                              "CoveredStatements": 11,
+                              "TotalStatements": 12,
+                              "CoveragePercent": 92,
+                              "Children": [
+                                {
+                                  "Kind": "Type",
+                                  "Name": "GetOrderByIdHandler",
+                                  "CoveredStatements": 11,
+                                  "TotalStatements": 12,
+                                  "CoveragePercent": 92,
+                                  "Children": [
+                                    {
+                                      "Kind": "Constructor",
+                                      "Name": "GetOrderByIdHandler(IOrderRepository)",
+                                      "CoveredStatements": 4,
+                                      "TotalStatements": 4,
+                                      "CoveragePercent": 100
+                                    },
+                                    {
+                                      "Kind": "Method",
+                                      "Name": "Handle(GetOrderByIdQuery,CancellationToken):Task<Result<OrderResponseQuery>>",
+                                      "CoveredStatements": 7,
+                                      "TotalStatements": 8,
+                                      "CoveragePercent": 88,
+                                      "Children": [
+                                        {
+                                          "Kind": "InternalCompiledMethod",
+                                          "Name": "MoveNext():void",
+                                          "CoveredStatements": 7,
+                                          "TotalStatements": 8,
+                                          "CoveragePercent": 88
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "Kind": "Namespace",
+                              "Name": "GetWithDescription",
+                              "CoveredStatements": 11,
+                              "TotalStatements": 12,
+                              "CoveragePercent": 92,
+                              "Children": [
+                                {
+                                  "Kind": "Type",
+                                  "Name": "GetOrderWithDescriptionHandler",
+                                  "CoveredStatements": 11,
+                                  "TotalStatements": 12,
+                                  "CoveragePercent": 92,
+                                  "Children": [
+                                    {
+                                      "Kind": "Constructor",
+                                      "Name": "GetOrderWithDescriptionHandler(IOrderRepository)",
+                                      "CoveredStatements": 4,
+                                      "TotalStatements": 4,
+                                      "CoveragePercent": 100
+                                    },
+                                    {
+                                      "Kind": "Method",
+                                      "Name": "Handle(GetOrderWithDescriptionQuery,CancellationToken):Task<Result<IEnumerable<OrderWithDescriptionQuery>>>",
+                                      "CoveredStatements": 7,
+                                      "TotalStatements": 8,
+                                      "CoveragePercent": 88,
+                                      "Children": [
+                                        {
+                                          "Kind": "InternalCompiledMethod",
+                                          "Name": "MoveNext():void",
+                                          "CoveredStatements": 7,
+                                          "TotalStatements": 8,
+                                          "CoveragePercent": 88
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "Kind": "Namespace",
+                          "Name": "Update",
+                          "CoveredStatements": 18,
+                          "TotalStatements": 19,
+                          "CoveragePercent": 95,
+                          "Children": [
+                            {
+                              "Kind": "Type",
+                              "Name": "UpdateOrderHandler",
+                              "CoveredStatements": 18,
+                              "TotalStatements": 19,
+                              "CoveragePercent": 95,
+                              "Children": [
+                                {
+                                  "Kind": "Constructor",
+                                  "Name": "UpdateOrderHandler(IOrderRepository)",
+                                  "CoveredStatements": 4,
+                                  "TotalStatements": 4,
+                                  "CoveragePercent": 100
+                                },
+                                {
+                                  "Kind": "Method",
+                                  "Name": "Handle(UpdateOrderCommand,CancellationToken):Task<Result<OrderResponseCommand>>",
+                                  "CoveredStatements": 14,
+                                  "TotalStatements": 15,
+                                  "CoveragePercent": 93,
+                                  "Children": [
+                                    {
+                                      "Kind": "InternalCompiledMethod",
+                                      "Name": "MoveNext():void",
+                                      "CoveredStatements": 14,
+                                      "TotalStatements": 15,
+                                      "CoveragePercent": 93,
+                                      "Children": [
+                                        {
+                                          "Kind": "OwnCoverage",
+                                          "CoveredStatements": 13,
+                                          "TotalStatements": 14,
+                                          "CoveragePercent": 93
+                                        },
+                                        {
+                                          "Kind": "AnonymousMethod",
+                                          "Name": "(OrderFood):Food",
+                                          "CoveredStatements": 1,
+                                          "TotalStatements": 1,
+                                          "CoveragePercent": 100
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "Kind": "Project",
+              "Name": "Fiap.TasteEase.Domain",
+              "CoveredStatements": 66,
+              "TotalStatements": 97,
+              "CoveragePercent": 68,
+              "Children": [
+                {
+                  "Kind": "Namespace",
+                  "Name": "Fiap.TasteEase.Domain.Aggregates",
+                  "CoveredStatements": 62,
+                  "TotalStatements": 85,
+                  "CoveragePercent": 73,
+                  "Children": [
+                    {
+                      "Kind": "Namespace",
+                      "Name": "FoodAggregate",
+                      "CoveredStatements": 22,
+                      "TotalStatements": 26,
+                      "CoveragePercent": 85,
+                      "Children": [
+                        {
+                          "Kind": "Type",
+                          "Name": "Food",
+                          "CoveredStatements": 22,
+                          "TotalStatements": 26,
+                          "CoveragePercent": 85,
+                          "Children": [
+                            {
+                              "Kind": "Constructor",
+                              "Name": "Food(FoodProps,FoodId)",
+                              "CoveredStatements": 3,
+                              "TotalStatements": 3,
+                              "CoveragePercent": 100
+                            },
+                            {
+                              "Kind": "Property",
+                              "Name": "CreatedAt:Nullable<DateTime>",
+                              "CoveredStatements": 1,
+                              "TotalStatements": 1,
+                              "CoveragePercent": 100,
+                              "Children": [
+                                {
+                                  "Kind": "PropertyGetter",
+                                  "CoveredStatements": 1,
+                                  "TotalStatements": 1,
+                                  "CoveragePercent": 100
+                                }
+                              ]
+                            },
+                            {
+                              "Kind": "Property",
+                              "Name": "Description:string",
+                              "CoveredStatements": 1,
+                              "TotalStatements": 1,
+                              "CoveragePercent": 100,
+                              "Children": [
+                                {
+                                  "Kind": "PropertyGetter",
+                                  "CoveredStatements": 1,
+                                  "TotalStatements": 1,
+                                  "CoveragePercent": 100
+                                }
+                              ]
+                            },
+                            {
+                              "Kind": "Property",
+                              "Name": "Name:string",
+                              "CoveredStatements": 1,
+                              "TotalStatements": 1,
+                              "CoveragePercent": 100,
+                              "Children": [
+                                {
+                                  "Kind": "PropertyGetter",
+                                  "CoveredStatements": 1,
+                                  "TotalStatements": 1,
+                                  "CoveragePercent": 100
+                                }
+                              ]
+                            },
+                            {
+                              "Kind": "Property",
+                              "Name": "Price:Decimal",
+                              "CoveredStatements": 1,
+                              "TotalStatements": 1,
+                              "CoveragePercent": 100,
+                              "Children": [
+                                {
+                                  "Kind": "PropertyGetter",
+                                  "CoveredStatements": 1,
+                                  "TotalStatements": 1,
+                                  "CoveragePercent": 100
+                                }
+                              ]
+                            },
+                            {
+                              "Kind": "Property",
+                              "Name": "Type:FoodType",
+                              "CoveredStatements": 1,
+                              "TotalStatements": 1,
+                              "CoveragePercent": 100,
+                              "Children": [
+                                {
+                                  "Kind": "PropertyGetter",
+                                  "CoveredStatements": 1,
+                                  "TotalStatements": 1,
+                                  "CoveragePercent": 100
+                                }
+                              ]
+                            },
+                            {
+                              "Kind": "Property",
+                              "Name": "UpdatedAt:Nullable<DateTime>",
+                              "CoveredStatements": 1,
+                              "TotalStatements": 1,
+                              "CoveragePercent": 100,
+                              "Children": [
+                                {
+                                  "Kind": "PropertyGetter",
+                                  "CoveredStatements": 1,
+                                  "TotalStatements": 1,
+                                  "CoveragePercent": 100
+                                }
+                              ]
+                            },
+                            {
+                              "Kind": "Method",
+                              "Name": "Create(CreateFoodProps):Result<Food>",
+                              "CoveredStatements": 6,
+                              "TotalStatements": 6,
+                              "CoveragePercent": 100
+                            },
+                            {
+                              "Kind": "Method",
+                              "Name": "Rehydrate(FoodProps,FoodId):Result<Food>",
+                              "CoveredStatements": 3,
+                              "TotalStatements": 3,
+                              "CoveragePercent": 100
+                            },
+                            {
+                              "Kind": "Method",
+                              "Name": "Rehydrate(FoodModel):Result<Food>",
+                              "CoveredStatements": 0,
+                              "TotalStatements": 4,
+                              "CoveragePercent": 0
+                            },
+                            {
+                              "Kind": "Method",
+                              "Name": "Update(CreateFoodProps):Result<Food>",
+                              "CoveredStatements": 4,
+                              "TotalStatements": 4,
+                              "CoveragePercent": 100
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "Kind": "Namespace",
+                      "Name": "OrderAggregate",
+                      "CoveredStatements": 40,
+                      "TotalStatements": 59,
+                      "CoveragePercent": 68,
+                      "Children": [
+                        {
+                          "Kind": "Type",
+                          "Name": "CreateOrderProps",
+                          "CoveredStatements": 2,
+                          "TotalStatements": 3,
+                          "CoveragePercent": 67,
+                          "Children": [
+                            {
+                              "Kind": "Constructor",
+                              "Name": "CreateOrderProps(string,Guid)",
+                              "CoveredStatements": 2,
+                              "TotalStatements": 3,
+                              "CoveragePercent": 67
+                            }
+                          ]
+                        },
+                        {
+                          "Kind": "Type",
+                          "Name": "Order",
+                          "CoveredStatements": 36,
+                          "TotalStatements": 49,
+                          "CoveragePercent": 73,
+                          "Children": [
+                            {
+                              "Kind": "Constructor",
+                              "Name": "Order(OrderProps,OrderId)",
+                              "CoveredStatements": 3,
+                              "TotalStatements": 3,
+                              "CoveragePercent": 100
+                            },
+                            {
+                              "Kind": "Property",
+                              "Name": "ClientId:Guid",
+                              "CoveredStatements": 1,
+                              "TotalStatements": 1,
+                              "CoveragePercent": 100,
+                              "Children": [
+                                {
+                                  "Kind": "PropertyGetter",
+                                  "CoveredStatements": 1,
+                                  "TotalStatements": 1,
+                                  "CoveragePercent": 100
+                                }
+                              ]
+                            },
+                            {
+                              "Kind": "Property",
+                              "Name": "CreatedAt:DateTime",
+                              "CoveredStatements": 1,
+                              "TotalStatements": 1,
+                              "CoveragePercent": 100,
+                              "Children": [
+                                {
+                                  "Kind": "PropertyGetter",
+                                  "CoveredStatements": 1,
+                                  "TotalStatements": 1,
+                                  "CoveragePercent": 100
+                                }
+                              ]
+                            },
+                            {
+                              "Kind": "Property",
+                              "Name": "Description:string",
+                              "CoveredStatements": 1,
+                              "TotalStatements": 1,
+                              "CoveragePercent": 100,
+                              "Children": [
+                                {
+                                  "Kind": "PropertyGetter",
+                                  "CoveredStatements": 1,
+                                  "TotalStatements": 1,
+                                  "CoveragePercent": 100
+                                }
+                              ]
+                            },
+                            {
+                              "Kind": "Property",
+                              "Name": "Foods:IReadOnlyList<OrderFood>",
+                              "CoveredStatements": 1,
+                              "TotalStatements": 1,
+                              "CoveragePercent": 100,
+                              "Children": [
+                                {
+                                  "Kind": "PropertyGetter",
+                                  "CoveredStatements": 1,
+                                  "TotalStatements": 1,
+                                  "CoveragePercent": 100
+                                }
+                              ]
+                            },
+                            {
+                              "Kind": "Property",
+                              "Name": "Status:OrderStatus",
+                              "CoveredStatements": 1,
+                              "TotalStatements": 1,
+                              "CoveragePercent": 100,
+                              "Children": [
+                                {
+                                  "Kind": "PropertyGetter",
+                                  "CoveredStatements": 1,
+                                  "TotalStatements": 1,
+                                  "CoveragePercent": 100
+                                }
+                              ]
+                            },
+                            {
+                              "Kind": "Property",
+                              "Name": "UpdatedAt:DateTime",
+                              "CoveredStatements": 1,
+                              "TotalStatements": 1,
+                              "CoveragePercent": 100,
+                              "Children": [
+                                {
+                                  "Kind": "PropertyGetter",
+                                  "CoveredStatements": 1,
+                                  "TotalStatements": 1,
+                                  "CoveragePercent": 100
+                                }
+                              ]
+                            },
+                            {
+                              "Kind": "Method",
+                              "Name": "AddFood(List<OrderFood>):Result<Order>",
+                              "CoveredStatements": 7,
+                              "TotalStatements": 7,
+                              "CoveragePercent": 100
+                            },
+                            {
+                              "Kind": "Method",
+                              "Name": "Create(CreateOrderProps):Result<Order>",
+                              "CoveredStatements": 6,
+                              "TotalStatements": 6,
+                              "CoveragePercent": 100
+                            },
+                            {
+                              "Kind": "Method",
+                              "Name": "GetTotalPrice(List<Food>):Result<Decimal>",
+                              "CoveredStatements": 7,
+                              "TotalStatements": 8,
+                              "CoveragePercent": 88,
+                              "Children": [
+                                {
+                                  "Kind": "OwnCoverage",
+                                  "CoveredStatements": 5,
+                                  "TotalStatements": 6,
+                                  "CoveragePercent": 83
+                                },
+                                {
+                                  "Kind": "AnonymousMethod",
+                                  "Name": "(OrderFood):Decimal",
+                                  "CoveredStatements": 2,
+                                  "TotalStatements": 2,
+                                  "CoveragePercent": 100,
+                                  "Children": [
+                                    {
+                                      "Kind": "OwnCoverage",
+                                      "CoveredStatements": 1,
+                                      "TotalStatements": 1,
+                                      "CoveragePercent": 100
+                                    },
+                                    {
+                                      "Kind": "AnonymousMethod",
+                                      "Name": "(Food):bool",
+                                      "CoveredStatements": 1,
+                                      "TotalStatements": 1,
+                                      "CoveragePercent": 100
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "Kind": "Method",
+                              "Name": "GetTotalPrice():Decimal",
+                              "CoveredStatements": 0,
+                              "TotalStatements": 4,
+                              "CoveragePercent": 0,
+                              "Children": [
+                                {
+                                  "Kind": "OwnCoverage",
+                                  "CoveredStatements": 0,
+                                  "TotalStatements": 3,
+                                  "CoveragePercent": 0
+                                },
+                                {
+                                  "Kind": "AnonymousMethod",
+                                  "Name": "(OrderFood):Decimal",
+                                  "CoveredStatements": 0,
+                                  "TotalStatements": 1,
+                                  "CoveragePercent": 0
+                                }
+                              ]
+                            },
+                            {
+                              "Kind": "Method",
+                              "Name": "Rehydrate(OrderProps,OrderId):Result<Order>",
+                              "CoveredStatements": 3,
+                              "TotalStatements": 3,
+                              "CoveragePercent": 100
+                            },
+                            {
+                              "Kind": "Method",
+                              "Name": "Rehydrate(OrderModel):Result<Order>",
+                              "CoveredStatements": 0,
+                              "TotalStatements": 8,
+                              "CoveragePercent": 0,
+                              "Children": [
+                                {
+                                  "Kind": "OwnCoverage",
+                                  "CoveredStatements": 0,
+                                  "TotalStatements": 7,
+                                  "CoveragePercent": 0
+                                },
+                                {
+                                  "Kind": "AnonymousMethod",
+                                  "Name": "(OrderFoodModel):OrderFood",
+                                  "CoveredStatements": 0,
+                                  "TotalStatements": 1,
+                                  "CoveragePercent": 0
+                                }
+                              ]
+                            },
+                            {
+                              "Kind": "Method",
+                              "Name": "UpdateStatus(OrderStatus):Result<Order>",
+                              "CoveredStatements": 4,
+                              "TotalStatements": 4,
+                              "CoveragePercent": 100
+                            }
+                          ]
+                        },
+                        {
+                          "Kind": "Type",
+                          "Name": "OrderProps",
+                          "CoveredStatements": 2,
+                          "TotalStatements": 7,
+                          "CoveragePercent": 29,
+                          "Children": [
+                            {
+                              "Kind": "Constructor",
+                              "Name": "OrderProps(string,OrderStatus,Guid,DateTime,DateTime,List<OrderFood>)",
+                              "CoveredStatements": 2,
+                              "TotalStatements": 7,
+                              "CoveragePercent": 29
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "Kind": "Type",
+                  "Name": "CreateFoodProps",
+                  "CoveredStatements": 2,
+                  "TotalStatements": 5,
+                  "CoveragePercent": 40,
+                  "Children": [
+                    {
+                      "Kind": "Constructor",
+                      "Name": "CreateFoodProps(string,string,Decimal,FoodType)",
+                      "CoveredStatements": 2,
+                      "TotalStatements": 5,
+                      "CoveragePercent": 40
+                    }
+                  ]
+                },
+                {
+                  "Kind": "Type",
+                  "Name": "FoodProps",
+                  "CoveredStatements": 2,
+                  "TotalStatements": 7,
+                  "CoveragePercent": 29,
+                  "Children": [
+                    {
+                      "Kind": "Constructor",
+                      "Name": "FoodProps(string,string,Decimal,FoodType,DateTime,DateTime)",
+                      "CoveredStatements": 2,
+                      "TotalStatements": 7,
+                      "CoveragePercent": 29
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Kind": "SolutionFolder",
+      "Name": "tests",
+      "CoveredStatements": 212,
+      "TotalStatements": 212,
+      "CoveragePercent": 100,
+      "Children": [
+        {
+          "Kind": "Project",
+          "Name": "Fiap.TasteEase.Application.Tests",
+          "CoveredStatements": 212,
+          "TotalStatements": 212,
+          "CoveragePercent": 100,
+          "Children": [
+            {
+              "Kind": "Namespace",
+              "Name": "Fiap.TasteEase.Application.Tests",
+              "CoveredStatements": 212,
+              "TotalStatements": 212,
+              "CoveragePercent": 100,
+              "Children": [
+                {
+                  "Kind": "Namespace",
+                  "Name": "Food",
+                  "CoveredStatements": 93,
+                  "TotalStatements": 93,
+                  "CoveragePercent": 100,
+                  "Children": [
+                    {
+                      "Kind": "Namespace",
+                      "Name": "Fixture",
+                      "CoveredStatements": 30,
+                      "TotalStatements": 30,
+                      "CoveragePercent": 100,
+                      "Children": [
+                        {
+                          "Kind": "Type",
+                          "Name": "CommandFoodFixture",
+                          "CoveredStatements": 15,
+                          "TotalStatements": 15,
+                          "CoveragePercent": 100,
+                          "Children": [
+                            {
+                              "Kind": "Constructor",
+                              "Name": "CommandFoodFixture()",
+                              "CoveredStatements": 6,
+                              "TotalStatements": 6,
+                              "CoveragePercent": 100
+                            },
+                            {
+                              "Kind": "Method",
+                              "Name": "CreateFood(Guid):void",
+                              "CoveredStatements": 4,
+                              "TotalStatements": 4,
+                              "CoveragePercent": 100
+                            },
+                            {
+                              "Kind": "Method",
+                              "Name": "CreateMockCommand(Guid):void",
+                              "CoveredStatements": 5,
+                              "TotalStatements": 5,
+                              "CoveragePercent": 100
+                            }
+                          ]
+                        },
+                        {
+                          "Kind": "Type",
+                          "Name": "GetFoodFixture",
+                          "CoveredStatements": 15,
+                          "TotalStatements": 15,
+                          "CoveragePercent": 100,
+                          "Children": [
+                            {
+                              "Kind": "Constructor",
+                              "Name": "GetFoodFixture()",
+                              "CoveredStatements": 6,
+                              "TotalStatements": 6,
+                              "CoveragePercent": 100
+                            },
+                            {
+                              "Kind": "Method",
+                              "Name": "CreateFood(Guid):void",
+                              "CoveredStatements": 5,
+                              "TotalStatements": 5,
+                              "CoveragePercent": 100
+                            },
+                            {
+                              "Kind": "Method",
+                              "Name": "CreateQuery(Guid):void",
+                              "CoveredStatements": 4,
+                              "TotalStatements": 4,
+                              "CoveragePercent": 100
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "Kind": "Type",
+                      "Name": "CommandFoodUseCases",
+                      "CoveredStatements": 39,
+                      "TotalStatements": 39,
+                      "CoveragePercent": 100,
+                      "Children": [
+                        {
+                          "Kind": "Constructor",
+                          "Name": "CommandFoodUseCases(CommandFoodFixture)",
+                          "CoveredStatements": 5,
+                          "TotalStatements": 5,
+                          "CoveragePercent": 100
+                        },
+                        {
+                          "Kind": "Method",
+                          "Name": "Create():Task",
+                          "CoveredStatements": 10,
+                          "TotalStatements": 10,
+                          "CoveragePercent": 100,
+                          "Children": [
+                            {
+                              "Kind": "InternalCompiledMethod",
+                              "Name": "MoveNext():void",
+                              "CoveredStatements": 10,
+                              "TotalStatements": 10,
+                              "CoveragePercent": 100,
+                              "Children": [
+                                {
+                                  "Kind": "OwnCoverage",
+                                  "CoveredStatements": 9,
+                                  "TotalStatements": 9,
+                                  "CoveragePercent": 100
+                                },
+                                {
+                                  "Kind": "AnonymousMethod",
+                                  "Name": "():Result<int>",
+                                  "CoveredStatements": 1,
+                                  "TotalStatements": 1,
+                                  "CoveragePercent": 100
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "Kind": "Method",
+                          "Name": "Delete():Task",
+                          "CoveredStatements": 12,
+                          "TotalStatements": 12,
+                          "CoveragePercent": 100,
+                          "Children": [
+                            {
+                              "Kind": "InternalCompiledMethod",
+                              "Name": "MoveNext():void",
+                              "CoveredStatements": 12,
+                              "TotalStatements": 12,
+                              "CoveragePercent": 100,
+                              "Children": [
+                                {
+                                  "Kind": "OwnCoverage",
+                                  "CoveredStatements": 10,
+                                  "TotalStatements": 10,
+                                  "CoveragePercent": 100
+                                },
+                                {
+                                  "Kind": "AnonymousMethod",
+                                  "Name": "():Result<Food>",
+                                  "CoveredStatements": 1,
+                                  "TotalStatements": 1,
+                                  "CoveragePercent": 100
+                                },
+                                {
+                                  "Kind": "AnonymousMethod",
+                                  "Name": "():Result<int>",
+                                  "CoveredStatements": 1,
+                                  "TotalStatements": 1,
+                                  "CoveragePercent": 100
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "Kind": "Method",
+                          "Name": "Update():Task",
+                          "CoveredStatements": 12,
+                          "TotalStatements": 12,
+                          "CoveragePercent": 100,
+                          "Children": [
+                            {
+                              "Kind": "InternalCompiledMethod",
+                              "Name": "MoveNext():void",
+                              "CoveredStatements": 12,
+                              "TotalStatements": 12,
+                              "CoveragePercent": 100,
+                              "Children": [
+                                {
+                                  "Kind": "OwnCoverage",
+                                  "CoveredStatements": 10,
+                                  "TotalStatements": 10,
+                                  "CoveragePercent": 100
+                                },
+                                {
+                                  "Kind": "AnonymousMethod",
+                                  "Name": "():Result<Food>",
+                                  "CoveredStatements": 1,
+                                  "TotalStatements": 1,
+                                  "CoveragePercent": 100
+                                },
+                                {
+                                  "Kind": "AnonymousMethod",
+                                  "Name": "():Result<int>",
+                                  "CoveredStatements": 1,
+                                  "TotalStatements": 1,
+                                  "CoveragePercent": 100
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "Kind": "Type",
+                      "Name": "QueryFoodUseCases",
+                      "CoveredStatements": 24,
+                      "TotalStatements": 24,
+                      "CoveragePercent": 100,
+                      "Children": [
+                        {
+                          "Kind": "Constructor",
+                          "Name": "QueryFoodUseCases(GetFoodFixture)",
+                          "CoveredStatements": 5,
+                          "TotalStatements": 5,
+                          "CoveragePercent": 100
+                        },
+                        {
+                          "Kind": "Method",
+                          "Name": "GetAll():Task",
+                          "CoveredStatements": 10,
+                          "TotalStatements": 10,
+                          "CoveragePercent": 100,
+                          "Children": [
+                            {
+                              "Kind": "InternalCompiledMethod",
+                              "Name": "MoveNext():void",
+                              "CoveredStatements": 10,
+                              "TotalStatements": 10,
+                              "CoveragePercent": 100,
+                              "Children": [
+                                {
+                                  "Kind": "OwnCoverage",
+                                  "CoveredStatements": 9,
+                                  "TotalStatements": 9,
+                                  "CoveragePercent": 100
+                                },
+                                {
+                                  "Kind": "AnonymousMethod",
+                                  "Name": "():Result<IEnumerable<Food>>",
+                                  "CoveredStatements": 1,
+                                  "TotalStatements": 1,
+                                  "CoveragePercent": 100
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "Kind": "Method",
+                          "Name": "GetById():Task",
+                          "CoveredStatements": 9,
+                          "TotalStatements": 9,
+                          "CoveragePercent": 100,
+                          "Children": [
+                            {
+                              "Kind": "InternalCompiledMethod",
+                              "Name": "MoveNext():void",
+                              "CoveredStatements": 9,
+                              "TotalStatements": 9,
+                              "CoveragePercent": 100,
+                              "Children": [
+                                {
+                                  "Kind": "OwnCoverage",
+                                  "CoveredStatements": 8,
+                                  "TotalStatements": 8,
+                                  "CoveragePercent": 100
+                                },
+                                {
+                                  "Kind": "AnonymousMethod",
+                                  "Name": "():Result<Food>",
+                                  "CoveredStatements": 1,
+                                  "TotalStatements": 1,
+                                  "CoveragePercent": 100
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "Kind": "Namespace",
+                  "Name": "Order",
+                  "CoveredStatements": 107,
+                  "TotalStatements": 107,
+                  "CoveragePercent": 100,
+                  "Children": [
+                    {
+                      "Kind": "Namespace",
+                      "Name": "Fixture",
+                      "CoveredStatements": 33,
+                      "TotalStatements": 33,
+                      "CoveragePercent": 100,
+                      "Children": [
+                        {
+                          "Kind": "Type",
+                          "Name": "OrderFixture",
+                          "CoveredStatements": 33,
+                          "TotalStatements": 33,
+                          "CoveragePercent": 100,
+                          "Children": [
+                            {
+                              "Kind": "Constructor",
+                              "Name": "OrderFixture()",
+                              "CoveredStatements": 11,
+                              "TotalStatements": 11,
+                              "CoveragePercent": 100
+                            },
+                            {
+                              "Kind": "Method",
+                              "Name": "CreateFood(Guid):void",
+                              "CoveredStatements": 5,
+                              "TotalStatements": 5,
+                              "CoveragePercent": 100
+                            },
+                            {
+                              "Kind": "Method",
+                              "Name": "CreateMockCommand(Guid,Guid,Guid):void",
+                              "CoveredStatements": 8,
+                              "TotalStatements": 8,
+                              "CoveragePercent": 100
+                            },
+                            {
+                              "Kind": "Method",
+                              "Name": "CreateOrder(Guid,Guid):void",
+                              "CoveredStatements": 5,
+                              "TotalStatements": 5,
+                              "CoveragePercent": 100
+                            },
+                            {
+                              "Kind": "Method",
+                              "Name": "CreateOrderFood(Guid,Guid):void",
+                              "CoveredStatements": 4,
+                              "TotalStatements": 4,
+                              "CoveragePercent": 100
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "Kind": "Type",
+                      "Name": "CommandOrderUseCases",
+                      "CoveredStatements": 42,
+                      "TotalStatements": 42,
+                      "CoveragePercent": 100,
+                      "Children": [
+                        {
+                          "Kind": "Constructor",
+                          "Name": "CommandOrderUseCases(OrderFixture)",
+                          "CoveredStatements": 6,
+                          "TotalStatements": 6,
+                          "CoveragePercent": 100
+                        },
+                        {
+                          "Kind": "Method",
+                          "Name": "Create():Task",
+                          "CoveredStatements": 12,
+                          "TotalStatements": 12,
+                          "CoveragePercent": 100,
+                          "Children": [
+                            {
+                              "Kind": "InternalCompiledMethod",
+                              "Name": "MoveNext():void",
+                              "CoveredStatements": 12,
+                              "TotalStatements": 12,
+                              "CoveragePercent": 100,
+                              "Children": [
+                                {
+                                  "Kind": "OwnCoverage",
+                                  "CoveredStatements": 10,
+                                  "TotalStatements": 10,
+                                  "CoveragePercent": 100
+                                },
+                                {
+                                  "Kind": "AnonymousMethod",
+                                  "Name": "():Result<int>",
+                                  "CoveredStatements": 1,
+                                  "TotalStatements": 1,
+                                  "CoveragePercent": 100
+                                },
+                                {
+                                  "Kind": "AnonymousMethod",
+                                  "Name": "():Result<List<Food>>",
+                                  "CoveredStatements": 1,
+                                  "TotalStatements": 1,
+                                  "CoveragePercent": 100
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "Kind": "Method",
+                          "Name": "UpdateStatusFail():Task",
+                          "CoveredStatements": 12,
+                          "TotalStatements": 12,
+                          "CoveragePercent": 100,
+                          "Children": [
+                            {
+                              "Kind": "InternalCompiledMethod",
+                              "Name": "MoveNext():void",
+                              "CoveredStatements": 12,
+                              "TotalStatements": 12,
+                              "CoveragePercent": 100,
+                              "Children": [
+                                {
+                                  "Kind": "OwnCoverage",
+                                  "CoveredStatements": 10,
+                                  "TotalStatements": 10,
+                                  "CoveragePercent": 100
+                                },
+                                {
+                                  "Kind": "AnonymousMethod",
+                                  "Name": "():Result<Order>",
+                                  "CoveredStatements": 1,
+                                  "TotalStatements": 1,
+                                  "CoveragePercent": 100
+                                },
+                                {
+                                  "Kind": "AnonymousMethod",
+                                  "Name": "():Result<int>",
+                                  "CoveredStatements": 1,
+                                  "TotalStatements": 1,
+                                  "CoveragePercent": 100
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "Kind": "Method",
+                          "Name": "UpdateStatusOk():Task",
+                          "CoveredStatements": 12,
+                          "TotalStatements": 12,
+                          "CoveragePercent": 100,
+                          "Children": [
+                            {
+                              "Kind": "InternalCompiledMethod",
+                              "Name": "MoveNext():void",
+                              "CoveredStatements": 12,
+                              "TotalStatements": 12,
+                              "CoveragePercent": 100,
+                              "Children": [
+                                {
+                                  "Kind": "OwnCoverage",
+                                  "CoveredStatements": 10,
+                                  "TotalStatements": 10,
+                                  "CoveragePercent": 100
+                                },
+                                {
+                                  "Kind": "AnonymousMethod",
+                                  "Name": "():Result<Order>",
+                                  "CoveredStatements": 1,
+                                  "TotalStatements": 1,
+                                  "CoveragePercent": 100
+                                },
+                                {
+                                  "Kind": "AnonymousMethod",
+                                  "Name": "():Result<int>",
+                                  "CoveredStatements": 1,
+                                  "TotalStatements": 1,
+                                  "CoveragePercent": 100
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "Kind": "Type",
+                      "Name": "QueryOrderUseCases",
+                      "CoveredStatements": 32,
+                      "TotalStatements": 32,
+                      "CoveragePercent": 100,
+                      "Children": [
+                        {
+                          "Kind": "Constructor",
+                          "Name": "QueryOrderUseCases(OrderFixture)",
+                          "CoveredStatements": 5,
+                          "TotalStatements": 5,
+                          "CoveragePercent": 100
+                        },
+                        {
+                          "Kind": "Method",
+                          "Name": "GetAll():Task",
+                          "CoveredStatements": 9,
+                          "TotalStatements": 9,
+                          "CoveragePercent": 100,
+                          "Children": [
+                            {
+                              "Kind": "InternalCompiledMethod",
+                              "Name": "MoveNext():void",
+                              "CoveredStatements": 9,
+                              "TotalStatements": 9,
+                              "CoveragePercent": 100,
+                              "Children": [
+                                {
+                                  "Kind": "OwnCoverage",
+                                  "CoveredStatements": 8,
+                                  "TotalStatements": 8,
+                                  "CoveragePercent": 100
+                                },
+                                {
+                                  "Kind": "AnonymousMethod",
+                                  "Name": "():Result<IEnumerable<Order>>",
+                                  "CoveredStatements": 1,
+                                  "TotalStatements": 1,
+                                  "CoveragePercent": 100
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "Kind": "Method",
+                          "Name": "GetById():Task",
+                          "CoveredStatements": 9,
+                          "TotalStatements": 9,
+                          "CoveragePercent": 100,
+                          "Children": [
+                            {
+                              "Kind": "InternalCompiledMethod",
+                              "Name": "MoveNext():void",
+                              "CoveredStatements": 9,
+                              "TotalStatements": 9,
+                              "CoveragePercent": 100,
+                              "Children": [
+                                {
+                                  "Kind": "OwnCoverage",
+                                  "CoveredStatements": 8,
+                                  "TotalStatements": 8,
+                                  "CoveragePercent": 100
+                                },
+                                {
+                                  "Kind": "AnonymousMethod",
+                                  "Name": "():Result<Order>",
+                                  "CoveredStatements": 1,
+                                  "TotalStatements": 1,
+                                  "CoveragePercent": 100
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "Kind": "Method",
+                          "Name": "GetWithDescription():Task",
+                          "CoveredStatements": 9,
+                          "TotalStatements": 9,
+                          "CoveragePercent": 100,
+                          "Children": [
+                            {
+                              "Kind": "InternalCompiledMethod",
+                              "Name": "MoveNext():void",
+                              "CoveredStatements": 9,
+                              "TotalStatements": 9,
+                              "CoveragePercent": 100,
+                              "Children": [
+                                {
+                                  "Kind": "OwnCoverage",
+                                  "CoveredStatements": 8,
+                                  "TotalStatements": 8,
+                                  "CoveragePercent": 100
+                                },
+                                {
+                                  "Kind": "AnonymousMethod",
+                                  "Name": "():Result<IEnumerable<Order>>",
+                                  "CoveredStatements": 1,
+                                  "TotalStatements": 1,
+                                  "CoveragePercent": 100
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "Kind": "Type",
+                  "Name": "CollectionFixture",
+                  "CoveredStatements": 12,
+                  "TotalStatements": 12,
+                  "CoveragePercent": 100,
+                  "Children": [
+                    {
+                      "Kind": "Constructor",
+                      "Name": "CollectionFixture()",
+                      "CoveredStatements": 4,
+                      "TotalStatements": 4,
+                      "CoveragePercent": 100
+                    },
+                    {
+                      "Kind": "Method",
+                      "Name": "ConfigMapster():void",
+                      "CoveredStatements": 8,
+                      "TotalStatements": 8,
+                      "CoveragePercent": 100
+                    }
+                  ]
+                },
+                {
+                  "Kind": "Type",
+                  "Name": "DatabaseCollection",
+                  "CoveredStatements": 0,
+                  "TotalStatements": 0,
+                  "CoveragePercent": 0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
