@@ -11,7 +11,7 @@ Fases:
 
 ## Video de apresentação
 
-[![Watch the video](/miscs/fase-1/ECRA.jpg)](https://youtu.be/LP8lCToo7as)
+[![Watch the video](/miscs/fase-1/ECRA.jpg)](https://youtu.be/pdzt2zT5zD8)
 
 ## Repositórios dos serviços
 
