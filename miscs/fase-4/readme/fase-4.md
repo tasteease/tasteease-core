@@ -26,7 +26,18 @@ Fases:
 - [Repositório cognito com lambda (auth identity)](https://github.com/tasteease/tasteease-tf-cognito)
 - [Repositório ecs (cluster)](https://github.com/tasteease/tasteease-tf-ecs)
 
-### Orquestração
+### Mais
+
+Os repositórios estão com a branch main (principal) travadas para alterações, que somente são aceitas com um pull request com uma aprovação de um dos membros da equipe. As pipelines e workflows foram criados em todos os repositórios:
+
+- Todos os repositórios possuem workflows para executar os `testes unitários`, além de usarem o `SonarQube` para validação do código. Também estão realizando o `build` das aplicações e fazendo o `push` das imagens no docker-hub.
+- Os repositórios de infraestrutura (rds, cognito e ecs) estão configurados com dois workflows que executam o comando de `plan` e o `apply` no terraform cloud para serem aplicados na AWS.
+
+### Cobertura de Testes do Core
+
+![Cobertura de testes](/test-coverage-image.jpg)
+
+[Relatório de cobertura dos testes](/test-coverage.json)
 
 Authored by:
 
