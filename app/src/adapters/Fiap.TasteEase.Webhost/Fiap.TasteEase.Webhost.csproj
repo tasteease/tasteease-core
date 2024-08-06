@@ -28,6 +28,7 @@
         <ProjectReference Include="..\..\core\Fiap.TasteEase.Domain\Fiap.TasteEase.Domain.csproj"/>
         <ProjectReference Include="..\..\presentation\Fiap.TasteEase.Api\Fiap.TasteEase.Api.csproj"/>
         <ProjectReference Include="..\Fiap.TasteEase.Infra\Fiap.TasteEase.Infra.csproj"/>
+        <ProjectReference Include="..\Fiap.TasteEase.RabbitMq\Fiap.TasteEase.RabbitMq.csproj" />
     </ItemGroup>
 
 </Project>
