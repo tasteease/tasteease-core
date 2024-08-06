@@ -8,7 +8,6 @@ Fases:
 - [Fase 1](/miscs/fase-1/readme/fase-1.md)
 - [Fase 2](/miscs/fase-2/readme/fase-2.md)
 - [Fase 3](/miscs/fase-3/readme/fase-3.md)
-- [Fase 3](/miscs/fase-4/readme/fase-4.md)
 
 ## Video de apresentação
 
