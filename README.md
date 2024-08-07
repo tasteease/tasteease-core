@@ -38,7 +38,7 @@ Pagamento recebido -> Fila de Pagamento -> Pedido atualizado para pago -> Fila p
 
 Para observar o respeito as normas da Lei Geral de Proteção de Dados, um endpoint para que os usuários consigam apagar os seus dados foi implementado. Dentro do serviço de usuários, que armazena os dados, existe uma chamada para que estes mesmos dados possam ser excluídos da plataforma.
 
-### Relatõrios
+### Relatórios
 - [OWASP ZAP](/miscs/report.html)
 - [LGPD](/miscs/RIPD.pdf)
 
