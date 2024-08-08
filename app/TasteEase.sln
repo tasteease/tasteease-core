@@ -25,6 +25,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fiap.TasteEase.Webhost", "s
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fiap.TasteEase.Api", "src\presentation\Fiap.TasteEase.Api\Fiap.TasteEase.Api.csproj", "{52AFAEB6-D31A-45CB-9AA6-F798A422DABB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fiap.TasteEase.RabbitMq", "src\adapters\Fiap.TasteEase.RabbitMq\Fiap.TasteEase.RabbitMq.csproj", "{2BB627D4-570B-456A-ADD6-AD9DC46E3292}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -55,6 +57,10 @@ Global
 		{52AFAEB6-D31A-45CB-9AA6-F798A422DABB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{52AFAEB6-D31A-45CB-9AA6-F798A422DABB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{52AFAEB6-D31A-45CB-9AA6-F798A422DABB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2BB627D4-570B-456A-ADD6-AD9DC46E3292}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2BB627D4-570B-456A-ADD6-AD9DC46E3292}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2BB627D4-570B-456A-ADD6-AD9DC46E3292}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2BB627D4-570B-456A-ADD6-AD9DC46E3292}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -69,6 +75,7 @@ Global
 		{F8F223EB-3B18-4B49-A91E-F65610145C9F} = {D878E35B-6522-4F28-A8D5-35232C615DB7}
 		{9B7F8F03-D499-4690-9753-90DC9AC09B67} = {56BB3436-7CD0-4066-9427-7FDF5568953C}
 		{52AFAEB6-D31A-45CB-9AA6-F798A422DABB} = {25DB12B3-C13D-4E77-92F9-855A496688EF}
+		{2BB627D4-570B-456A-ADD6-AD9DC46E3292} = {56BB3436-7CD0-4066-9427-7FDF5568953C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7D7BD128-797A-4BAF-837D-B4A7AF460DE9}

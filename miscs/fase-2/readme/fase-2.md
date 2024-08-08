@@ -19,11 +19,11 @@ _O antigo repositório foi migrado para este_
 
 ## Kubernetes
 
-![Imgur](.../../fase-1/k8s-diagram.png)
+![Imgur](../../fase-1/k8s-diagram.png)
 
 ## Database diagram
 
-![Imgur](.../../fase-1/database-diagram.png)
+![Imgur](../../fase-1/database-diagram.png)
 
 ### Passos para execução da infraestrutura com Kubernetes
 
