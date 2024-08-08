@@ -5,6 +5,7 @@
 # Taste Ease S/A
 
 Fases:
+
 - [Fase 1](/miscs/fase-1/readme/fase-1.md)
 - [Fase 2](/miscs/fase-2/readme/fase-2.md)
 - [Fase 3](/miscs/fase-3/readme/fase-3.md)
@@ -12,7 +13,7 @@ Fases:
 
 ## Video de apresentação
 
-[![Watch the video](/miscs/fase-1/ECRA.jpg)](https://youtu.be/YqYHhsRq4WE)
+[![Watch the video](/miscs/fase-1/ECRA.jpg)](https://youtu.be/Y7dEX7MlyWA)
 
 ## Repositórios dos serviços
 
@@ -39,6 +40,7 @@ Pagamento recebido -> Fila de Pagamento -> Pedido atualizado para pago -> Fila p
 Para observar o respeito as normas da Lei Geral de Proteção de Dados, um endpoint para que os usuários consigam apagar os seus dados foi implementado. Dentro do serviço de usuários, que armazena os dados, existe uma chamada para que estes mesmos dados possam ser excluídos da plataforma.
 
 ### Relatórios
+
 - [OWASP ZAP](/miscs/report.html)
 - [LGPD](/miscs/RIPD.pdf)
 
